@@ -45,8 +45,8 @@ const FilterPanel = ({
                     Food Preferences
                   </h5>
                 </>
-                <>
-                  <ul className="pl-0">
+                <div className="ms-md-n4">
+                  <ul className="grid gap-3">
                     {dietaryCategories.map((category) => (
                       <li
                         style={{
@@ -76,7 +76,7 @@ const FilterPanel = ({
                       </li>
                     ))}
                   </ul>
-                </>
+                </div>
               </div>
               {/* <hr /> */}
               <div className="mt-5">
@@ -85,8 +85,8 @@ const FilterPanel = ({
                     Course
                   </h5>
                 </>
-                <>
-                  <ul className="pl-0">
+                <div className="ms-md-n4">
+                  <ul className="grid gap-3">
                     {mealCategories.map((category) => (
                       <li
                         style={{
@@ -110,7 +110,7 @@ const FilterPanel = ({
                       </li>
                     ))}
                   </ul>
-                </>
+                </div>
               </div>
               {/* <hr className="my-5" /> */}
             </div>
