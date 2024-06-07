@@ -250,7 +250,7 @@ const ReusableTable = ({
                 }}
               >
                 <td
-                  style={{ border: 'none' }}
+                  style={{ border: 'none', width: '100px' }}
                   key={header}
                   onClick={() => handleSort('name')}
                 >

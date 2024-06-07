@@ -32,7 +32,7 @@ const SignUpForm = () => {
 
     try {
       const response = await axios.post('/api/register', formData);
-      alert('Registration link has sent to your email successfully!');
+      alert('Registration link has been sent to your email successfully!');
     } catch (error) {
       alert(`${error.response.data.message}`);
     }

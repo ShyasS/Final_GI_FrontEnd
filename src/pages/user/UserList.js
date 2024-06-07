@@ -19,7 +19,7 @@ const UsersList = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
   const [role, setRole] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
   const [productsCount, setProductsCount] = useState(0);
   const [resPerPage, setResPerPage] = useState(0);
   const [assignBranch, setAssignBranch] = useState('');
@@ -151,16 +151,16 @@ const UsersList = () => {
                   </select>
                 </div>
               </div>
-              <div className="col-lg-3 col-xs-12 col-md-4 mx-auto">
+              <div className="col-lg-3 col-xs-6 col-md-4 mx-auto ">
                 <Link
-                  className="btn my-global-button"
+                  className="btn my-global-button mt-3"
                   style={{ background: '#51bc8fb5' }}
                   to="/admin/customer/list"
                 >
                   View Customers
                 </Link>
               </div>
-              <div className="col-lg-3 col-md-4 col-xs-12">
+              <div className="col-lg-3 col-md-4 col-xs-6 mt-3 ">
                 <button className="btn my-global-button" onClick={handleAdd}>
                   Create Admin
                 </button>
@@ -186,7 +186,7 @@ const UsersList = () => {
                   )
                 }))}
               />
-              <div className="pagination-1 mx-auto">
+              <div className="pagination-1 col-md-12 col-xs-3 mx-auto">
                 <Pagination
                   activePage={currentPage}
                   itemsCountPerPage={resPerPage}
