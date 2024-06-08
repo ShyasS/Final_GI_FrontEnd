@@ -186,18 +186,22 @@ const UsersList = () => {
                   )
                 }))}
               />
-              <div className="pagination-1 col-md-12 col-xs-3 mx-auto">
-                <Pagination
-                  activePage={currentPage}
-                  itemsCountPerPage={resPerPage}
-                  totalItemsCount={productsCount}
-                  onChange={handlePageChange}
-                  nextPageText="Next"
-                  firstPageText="First"
-                  lastPageText="Last"
-                  itemClass="page-item"
-                  linkClass="page-link"
-                />
+              <div className="pagination col-md-12 col-xs-3 mx-auto">
+                <div className="page-item">
+                  <div className="page-link">
+                    <Pagination
+                      activePage={currentPage}
+                      itemsCountPerPage={resPerPage}
+                      totalItemsCount={productsCount}
+                      onChange={handlePageChange}
+                      nextPageText="Next"
+                      firstPageText="First"
+                      lastPageText="Last"
+                      itemClass="page-item"
+                      linkClass="page-link"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
