@@ -144,11 +144,11 @@ const Cart = () => {
     return (
       <div
         className="row justify-content-center"
-        id="EmptyCard"
+        id="CardDetail"
         style={{ height: '60vh' }}
       >
-        <div className="col-12 mt-5 my-auto text-center align-center">
-          <h3 className="mx-auto fs-1 pt-5">Your cart is empty</h3>
+        <div id="" className="col-12 mt-5 mx-auto text-center align-center">
+          <h3 className="mx-auto fs-1 pt-5 text-black">Your cart is empty</h3>
         </div>
       </div>
     );
