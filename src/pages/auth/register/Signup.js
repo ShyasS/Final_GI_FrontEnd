@@ -79,7 +79,7 @@ const SignUpForm = () => {
           className="col-11 col-md-8 col-lg-12 mx-auto custom-table mx-3 mt-4 bg-white"
         >
           <div className="col-md-12 col-12 px-4">
-            <h1 className="text-center mt-3 font-regular-29" id="CardText">
+            <h1 className="text-center mt-3 fs-1" id="CardText">
               Sign up
             </h1>
       
