@@ -1,16 +1,9 @@
 
 import React from 'react';
-import {useTypewriter, Cursor} from 'react-simple-typewriter'
 import { Col, Container, Row } from 'react-bootstrap';
 import './index.css';
 
 const HomeFirstComp = () => {
-  const [typeEffect] = useTypewriter({
-    words : ['WELCOME TO GRAND INDIA RESTAURANT', ' ITS TIME TO ENJOY THE FINER THINGS IN LIFE. '],
-    loop : {},
-    typeSpeed : 60,
-    deleteSpeed : 40
-  })
   return (
     <div className="HomeMainFirst">
       <Container>
@@ -23,10 +16,14 @@ const HomeFirstComp = () => {
             className="mb-4"
           >
             <p className="text-center text-white HomeH1Tag">
-             <span style={{fontSize:'40px', color:'#fce49a'}} >{typeEffect}</span>
+              WELCOME TO GRAND INDIA RESTAURANTS
             </p>
             <p className="text-center text-white py-5 fs-4 ">
               THE PERFECT CHOICE FOR YOUR RESTAURANT
+            </p>
+            <p className="text-center text-white " id="HomeH1Tag1">
+              ITS TIME TO ENJOY THE{' '}
+              <span style={{ color: 'orange' }}>FINER THINGS </span> IN LIFE.{' '}
             </p>
             {/* <p className="text-center text-white " id="HomeH1Tag1">
               ITS TIME TO ENJOY THE{' '}
