@@ -1,12 +1,5 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-shadow */
-/* eslint-disable prefer-destructuring */
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/prop-types */
-/* eslint-disable camelcase */
+
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
 import './index.css';
 import { Button, Card } from 'react-bootstrap';
 import BillingAddress from './BillingAddress';
@@ -42,7 +35,7 @@ const DeliveryAddress = ({
   handleText2
 }) => {
   return (
-    <Card className="my-3 p-3" id="CardBackIMg">
+    <Card className="my-3 p-3 bg-white">
       <h4 id="CardText">Delivery Address</h4>
       <div className="location-options mt-2">
         <label className="radio-label" id="CardText">
@@ -190,7 +183,7 @@ const DeliveryAddress = ({
       ) : (
         <div className="address-container">
           <div className="mb-3">
-            <label id="CardText" htmlFor="streetAddress" className="form-label">
+            <label id="CardText" htmlFor="streetAddress" className="form-label text-black">
               Street Address{' '}
               <span className="text-danger">
                 {' '}
@@ -209,7 +202,7 @@ const DeliveryAddress = ({
             />
           </div>
           <div className="mb-3">
-            <label id="CardText" htmlFor="zipCode" className="form-label">
+            <label  htmlFor="zipCode" className="form-label text-black ">
               ZIP Code{' '}
               <span className="text-danger">
                 {' '}
@@ -228,7 +221,7 @@ const DeliveryAddress = ({
             />
           </div>
           <div className="mb-3">
-            <label id="CardText" htmlFor="city" className="form-label">
+            <label htmlFor="city" className="form-label text-black">
               City{' '}
               <span className="text-danger">
                 {' '}
@@ -247,7 +240,7 @@ const DeliveryAddress = ({
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="state" id="CardText" className="form-label">
+            <label htmlFor="state" className="form-label text-black">
               State{' '}
               <span className="text-danger">
                 {' '}
@@ -266,7 +259,7 @@ const DeliveryAddress = ({
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="country" id="CardText" className="form-label">
+            <label htmlFor="country"  className="form-label text-black">
               Country{' '}
               <span className="text-danger">
                 {' '}
@@ -324,8 +317,7 @@ const DeliveryAddress = ({
           )}
           <label
             htmlFor="deliveryInstructions"
-            id="CardText"
-            className="form-label"
+            className="form-label text-black"
           >
             Delivery Instruction
           </label>

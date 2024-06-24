@@ -1,13 +1,9 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import MetaData from 'layout/MetaData';
 import { Link } from 'react-router-dom';
-
+import './UpdateProfile.css';
+import { Card } from 'react-bootstrap';
 export default function UpdateProfile() {
   const userId = JSON.parse(localStorage.getItem('user'));
   const [name, setName] = useState('');
@@ -72,9 +68,10 @@ export default function UpdateProfile() {
   }, []);
 
   return (
-    <div id="ProfileMainImg1" className="py-5">
+    <div className=" bg-white py-5">
       <MetaData title="update" />
-      <div className="col-11 custom-table col-lg-4 mx-auto " id="CardBackIMg1">
+      <div className="col-11 custom-table col-lg-4 mx-auto Cardimg123">
+        <Card className='Cardimg123'>
         <form
           id="CardText"
           onSubmit={submitHandler}
@@ -234,20 +231,21 @@ export default function UpdateProfile() {
           <div className="px-3">
             <button
               type="submit"
-              className="btn my-global-button update-btn btn-block mt-4 mb-3"
+              className="btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black mb-3"
             >
               Update
             </button>
             <Link to="/myProfile/:id">
               <button
                 type="submit"
-                className="btn my-global-button update-btn btn-block mt-4 mb-3 ms-5"
+                className="btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black"
               >
                 Back to HomePage
               </button>
             </Link>
           </div>
         </form>
+        </Card>
       </div>
     </div>
   );

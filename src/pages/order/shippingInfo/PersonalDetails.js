@@ -1,9 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-undef */
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-// import SimpleReactValidator from 'simple-react-validator';
 import './index.css';
 import { Button, Card } from 'react-bootstrap';
 
@@ -25,10 +20,10 @@ const PersonalDetails = ({
   const [errors, setErrors] = useState('');
   return (
     <div>
-      <Card className="my-3 p-3" style={{ backgroundColor: 'transparent' }}>
-        <h4 id="CardText">Personal Details</h4>
+      <Card className="my-3 p-3 bg-white" >
+        <h4 className='text-black'>Personal Details</h4>
         <div className="mb-3 address-container ">
-          <label htmlFor="userName" className="form-label" id="CardText">
+          <label htmlFor="userName" className="form-label text-black" >
             First Name{' '}
             <span className="text-danger">
               <b>*</b>
@@ -47,7 +42,7 @@ const PersonalDetails = ({
           {errors.name && <div className="error">{errors.name}</div>}
         </div>
         <div className="mb-3 address-container">
-          <label htmlFor="lastName" className="form-label" id="CardText">
+          <label htmlFor="lastName" className="form-label text-black">
             Last Name{' '}
             <span className="text-danger">
               {' '}
@@ -69,7 +64,7 @@ const PersonalDetails = ({
           className="mb-3 address-container"
           style={{ display: otpVerified ? 'none' : 'block' }}
         >
-          <label htmlFor="emailOrMobile" className="form-label" id="CardText">
+          <label htmlFor="emailOrMobile" className="form-label text-black">
             Email / Mobile Number{' '}
             <span className="text-danger">
               {' '}
@@ -89,7 +84,7 @@ const PersonalDetails = ({
         </div>
         <Button
           type="button"
-          className="my-global-button my-2"
+          className="back my-2"
           onClick={handleGetOtp}
           style={{ display: otpVerified ? 'none' : 'block' }}
         >
@@ -118,7 +113,7 @@ const PersonalDetails = ({
             </div>
             <Button
               type="button"
-              className="my-3 my-global-button"
+              className="my-3 back"
               required
               onClick={handleConfirmOtp}
               style={{ display: otpVerified ? 'none' : 'block' }}

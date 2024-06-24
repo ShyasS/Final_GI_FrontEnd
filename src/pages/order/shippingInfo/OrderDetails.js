@@ -12,10 +12,10 @@ const OrderDetails = ({
   textBox1
 }) => {
   return (
-    <Card className="my-3 p-3 bg-transparent">
+    <Card className="my-3 p-3 bg-white">
       <h4 id="CardText">Order Details</h4>
       <div className="mb-3 address-container">
-        <label htmlFor="orderType" className="form-label" id="CardText">
+        <label htmlFor="orderType" className="form-label text-black">
           Order Type{' '}
           <span className="text-danger">
             {' '}
@@ -42,7 +42,7 @@ const OrderDetails = ({
         </select>
       </div>
       <div className="mb-3 address-container">
-        <label htmlFor="orderNotes" className="form-label" id="CardText">
+        <label htmlFor="orderNotes" className="form-label text-black">
           Order Notes
         </label>
         <textarea

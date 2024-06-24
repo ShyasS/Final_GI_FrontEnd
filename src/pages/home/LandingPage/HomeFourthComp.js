@@ -20,7 +20,7 @@ const HomeFourthComp = () => {
             </h1>
           </Col>
           <Col lg={12} xs={12} sm={12}>
-            <div className="mt-4">
+            <div className="mt-4 mx-auto">
               <ContactUs />
             </div>
           </Col>

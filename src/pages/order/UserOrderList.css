@@ -15,3 +15,7 @@
   background-size: cover;
   background-position: center;
 }
+.Cardimg123{
+  color: rgb(9, 8, 8) !important;
+  filter:drop-shadow(6px 5px 6px rgb(250, 30, 30)) !important;
+}

@@ -1,4 +1,4 @@
-/* eslint-disable global-require */
+
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -65,7 +65,7 @@ const HomeThirdComponent = () => {
           <Col className="col-12 col-lg-5 col-xxl-6">
             <Image
               style={{
-                height: '80vh',
+                height: '35rem',
                 width: 'auto',
                 borderRadius: '30px'
               }}

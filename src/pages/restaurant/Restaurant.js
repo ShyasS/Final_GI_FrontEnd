@@ -1,11 +1,9 @@
-/* eslint-disable no-alert */
-/* eslint-disable react/button-has-type */
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ReusableTable from '../../components/ReusableTable';
 import './index.css';
-// import Sidebar from './Sidebar';
 
 const RestaurantTable = () => {
   const headers = [
@@ -67,7 +65,7 @@ const RestaurantTable = () => {
   }, []);
 
   return (
-    <div className="MenuHeaderMain1 pt-4" style={{ minHeight: '58vh' }}>
+    <div className="bg-white text-black pt-4" style={{ minHeight: '58vh' }}>
       <div className="container-fluid" id="CardText">
         <div className="row">
           <h1 className=" mt-3" style={{ fontWeight: 'bold' }}>
@@ -78,9 +76,9 @@ const RestaurantTable = () => {
               <p>Loading...</p>
             ) : (
               <div style={{ display: 'flex' }}>
-                <h5 className="mt-2">Create a new restaurant - </h5>
+                <h5 className="mt-2 text-black">Create a new restaurant - </h5>
                 <button
-                  className="btn my-global-button m-1"
+                  className="btn  px-4 btn border border-danger rounded bg-white ms-2  text-black m-1"
                   onClick={handleAdd}
                 >
                   Create

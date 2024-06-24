@@ -1,11 +1,10 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-alert */
-/* eslint-disable no-unused-vars */
-/* eslint-disable prettier/prettier */
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './SignUpForm.css';
+import CryptoJS from 'crypto-js';
+import { Card } from 'react-bootstrap';
 
 const SignUpForm = () => {
   const defaultAvatarImage =
@@ -27,19 +26,40 @@ const SignUpForm = () => {
     });
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const response = await axios.post('/api/register', formData);
+  //     alert('Registration link has been sent to your email successfully!');
+  //   } catch (error) {
+  //     alert(`${error.response.data.message}`);
+  //   }
+  // };
+ 
+  // };
+  const defaultAvatarStyle = {
+    display: formData.avatar === defaultAvatarImage ? 'block' : 'none',
+    maxWidth: '100px'
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const encryptedPassword = CryptoJS.AES.encrypt(
+      formData.password,
+      'ghjdjdgdhddjjdhgdcdghww#hsh536'
+    ).toString();
     try {
-      const response = await axios.post('/api/register', formData);
+     
+    const response = await axios.post('/api/register', {
+        ...formData,
+        password: encryptedPassword
+      });
       alert('Registration link has been sent to your email successfully!');
     } catch (error) {
       alert(`${error.response.data.message}`);
     }
-  };
-  const defaultAvatarStyle = {
-    display: formData.avatar === defaultAvatarImage ? 'block' : 'none',
-    maxWidth: '100px'
+    
   };
 
   const customAvatarStyle = {
@@ -51,28 +71,18 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="container-fluid py-5"
-      id="LoginMainImg"
+    <div className="container-fluid py-5 bg-white"
     >
+<Card className='Cardimg123 col-lg-5 mx-auto' >
       <form onSubmit={handleSubmit}>
         <div
-          className="col-11 col-md-8 col-lg-5 mx-auto custom-table mx-3 mt-4"
-          id="CardBackIMg1"
+          className="col-11 col-md-8 col-lg-12 mx-auto custom-table mx-3 mt-4 bg-white"
         >
           <div className="col-md-12 col-12 px-4">
             <h1 className="text-center mt-3 font-regular-29" id="CardText">
               Sign up
             </h1>
-            <div id="CardText">
-              <p id="CardText">If you have account?</p>{' '}
-              <div className="links-container mb-4">
-                <p>
-                  <Link to="/login" id="CardText" className="text-white fs-5">
-                    Login
-                  </Link>
-                </p>
-              </div>
-            </div>
+      
             <div className="col-md-11 mx-auto">
               <div className="mb-3 address-container">
                 <label htmlFor="name" id="CardText">
@@ -242,16 +252,23 @@ const SignUpForm = () => {
             <div className="my-3 d-flex justify-content-center">
               <button
                 type="submit"
-                className="px-4 btn mt-4"
-                id="LoginImg1"
+                className="px-4 btn mt-4 className=' btn border border-danger w-100 rounded bg-white text-black '"
                 style={{  borderRadius: '30px' }}
               >
                 Sign up
               </button>
             </div>
+              <p className='float-center my-4'>If you have an account?{' '}
+                  <Link to="/login" id="CardText" className="text-black fs-5">
+                  <button className=' btn border border-danger rounded bg-white text-black '>
+                    Login
+                    </button>
+                  </Link>
+                  </p>
           </div>
         </div>
       </form>
+      </Card>
     </div>
   );
 };

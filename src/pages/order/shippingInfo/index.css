@@ -46,7 +46,7 @@ label{
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  border: 2px solid #007bff; /* Adjust the border color as needed */
+  border: 2px solid #ffdbdb; /* Adjust the border color as needed */
   border-radius: 50%;
   background-color: #fff; /* Adjust the background color as needed */
   transition: background-color 0.3s;
@@ -59,12 +59,12 @@ label{
 }
 
 .radio-label:hover .radio-custom {
-  background-color: #f0f0f0; /* Adjust the background color on hover as needed */
+  background-color: #f8c5c5; /* Adjust the background color on hover as needed */
 }
 
 .radio-label input:checked + .radio-custom {
-  background-color: #007bff; /* Adjust the background color for checked state */
-  border-color: #007bff; /* Adjust the border color for checked state */
+  background-color: white; /* Adjust the background color for checked state */
+  border-color: #f7c7c7; /* Adjust the border color for checked state */
 }
 /* Add this CSS to your existing stylesheet or create a new one */
 
@@ -89,7 +89,7 @@ label{
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  border: 2px solid #007bff; /* Adjust the border color as needed */
+  border: 2px solid #ff2525; /* Adjust the border color as needed */
   border-radius: 50%;
   background-color: #fff; /* Adjust the background color as needed */
   transition: background-color 0.3s;
@@ -102,21 +102,21 @@ label{
 }
 
 .radio-label:hover .radio-custom {
-  background-color: #f0f0f0; /* Adjust the background color on hover as needed */
+  background-color: #fedfdf; /* Adjust the background color on hover as needed */
 }
 
 .radio-label input:checked + .radio-custom {
-  background-color: #007bff; /* Adjust the background color for checked state */
-  border-color: #007bff; /* Adjust the border color for checked state */
+  background-color: rgb(255, 0, 0); /* Adjust the background color for checked state */
+  border-color: #ff0000; /* Adjust the border color for checked state */
 }
 .form-select {
   width: 100%;
 }
-#CardLogText{
-  color: white;
-  text-shadow: 1px 1.7px #5a3a07;
-  background-color: transparent;
+.back{
+  background-color: white !important;
+  color:black !important;
 }
+
 #PersonalBGImg{
     background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('../../../assets/img/dark-gradient-background-with-copy-space_53876-99548.avif');
     background-repeat: no-repeat;

@@ -1,5 +1,4 @@
-/* eslint-disable no-alert */
-/* eslint-disable jsx-a11y/label-has-associated-control */
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -91,11 +90,12 @@ const EditRestaurant = () => {
   };
 
   return (
-    <div className="MenuHeaderMain1">
-      <div className="col-md-7 col-lg-5 container">
-        <h4 className="py-3">Edit Restaurant</h4>
+    <div className="bg-white text-black py-4">
+      <div className="col-md-7 col-lg-5 container my-4">
+       
         <form onSubmit={handleSubmit} className="address-container">
-          <Card className="p-3" id="CardBackIMg1">
+          <Card className="p-3 Cardimg123">
+          <h4 className="py-3">Edit Restaurant</h4>
             <div className="mb-4">
               <label>
                 Restaurant Name:
@@ -342,7 +342,7 @@ const EditRestaurant = () => {
               />
             </div>
             <div className="d-flex justify-content-center">
-              <button type="submit" className="my-global-button my-4">
+              <button type="submit" className="btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black my-4">
                 Update Restaurant
               </button>
             </div>

@@ -1,11 +1,6 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-shadow */
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-// eslint-disable-next-line import/no-useless-path-segments
 import RestaurantSelection from '../../pages/restaurant/RestaurantSelection';
 import ProductModal from './HomeModel';
 

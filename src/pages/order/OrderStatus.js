@@ -62,30 +62,32 @@ const OrderStatus = () => {
   }, [id]); // Empty dependency array ensures the effect runs only once
 
   return (
-    <div className="CreateMenu py-1 text-white">
+    <div className=" bg-white py-1 text-black">
       <div className="container">
         <div className="row   mx-auto mt-4 mb-4">
           <div className="col">
-            <h4 className="my-4">
+            <Card className='text-black Cardimg123 p-3 '>
+            <h4 className="p-3 my-4 text-black">
               <b>Order Info</b>
             </h4>
-            <div className="row d-flex justify-content-around">
+            <div className="row d-flex justify-content-around text-black">
               <div className="col-12 col-lg-4 order-details">
                 <div style={{ display: 'flex', marginBottom: '1rem' }}>
-                  <p className="mx-2">
-                    <b style={{ color: 'white' }}>Order Id:</b>
+                  <p className="mx-2 text-black">
+                    <b style={{ color: 'black' }} className='text-black'>Order Id:</b>
+                  
+                  {orderDetails?.orderid} 
                   </p>
-                  {orderDetails?._id}
                 </div>
 
                 <p
                   style={{
                     display: 'flex',
-                    color: 'white',
+                    color: 'black',
                     marginBottom: '1rem'
                   }}
                 >
-                  <b style={{ color: 'white' }} className="mx-2">
+                  <b style={{ color: 'black' }} className="mx-2">
                     Name:
                   </b>
                   {`${orderDetails?.shipping.name} ${
@@ -95,11 +97,11 @@ const OrderStatus = () => {
                 <p
                   style={{
                     display: 'flex',
-                    color: 'white',
+                    color: 'black',
                     marginBottom: '1rem'
                   }}
                 >
-                  <b style={{ color: 'white' }} className="mx-2">
+                  <b style={{ color: 'black' }} className="mx-2">
                     Phone:
                   </b>{' '}
                   {orderDetails?.shipping.phone || 'not found'}
@@ -107,12 +109,12 @@ const OrderStatus = () => {
                 <p
                   style={{
                     display: 'flex',
-                    color: 'white',
+                    color: 'black',
                     marginBottom: '1rem',
                     marginLeft: '7px'
                   }}
                 >
-                  <b style={{ color: 'white' }} className="">
+                  <b style={{ color: 'black' }} className="">
                     Billing Address:
                   </b>{' '}
                   {orderDetails?.shipping.address.line1},{' '}
@@ -123,13 +125,13 @@ const OrderStatus = () => {
                 {orderDetails?.delivery && (
                   <p
                     style={{
-                      color: 'white',
+                      color: 'black',
                       display: 'flex',
                       marginBottom: '1rem',
                       marginLeft: '7px'
                     }}
                   >
-                    <b style={{ color: 'white' }} className="">
+                    <b style={{ color: 'black' }} className="">
                       Delivery Address:
                     </b>{' '}
                     {orderDetails.delivery.line1 || ''},{' '}
@@ -142,7 +144,7 @@ const OrderStatus = () => {
                 <p
                   style={{
                     display: 'flex',
-                    color: 'white',
+                    color: 'black',
                     marginBottom: '1rem'
                   }}
                 >
@@ -152,7 +154,7 @@ const OrderStatus = () => {
                 <p
                   style={{
                     display: 'flex',
-                    color: 'white',
+                    color: 'black',
                     marginBottom: '1rem'
                   }}
                 >
@@ -162,7 +164,7 @@ const OrderStatus = () => {
                 <p
                   style={{
                     display: 'flex',
-                    color: 'white',
+                    color: 'black',
                     marginBottom: '1rem'
                   }}
                 >
@@ -172,7 +174,7 @@ const OrderStatus = () => {
                 <p
                   style={{
                     display: 'flex',
-                    color: 'white',
+                    color: 'black',
                     marginBottom: '1rem'
                   }}
                 >
@@ -182,7 +184,7 @@ const OrderStatus = () => {
                 <p
                   style={{
                     display: 'flex',
-                    color: 'white',
+                    color: 'black',
                     marginBottom: '1rem'
                   }}
                 >
@@ -192,13 +194,13 @@ const OrderStatus = () => {
                 <p
                   style={{
                     display: 'flex',
-                    color: 'white',
+                    color: 'black',
                     marginBottom: '1rem'
                   }}
                 >
                   <b className="mx-2">Payment:</b> {orderDetails?.paymentStatus}
                 </p>
-                <p style={{ color: 'white' }}>
+                <p style={{ color: 'black' }}>
                   <b className="mx-2">Payment Id: </b>{' '}
                   {orderDetails?.paymentInfo}
                 </p>
@@ -206,7 +208,7 @@ const OrderStatus = () => {
                 <p
                   style={{
                     display: 'flex',
-                    color: 'white',
+                    color: 'black',
                     marginBottom: '1rem'
                   }}
                 >
@@ -219,7 +221,7 @@ const OrderStatus = () => {
             
           </div> */}
               <div className="col-12 col-lg-8 mt-2">
-                <h4 className="ms-5 px-5" style={{ color: 'white' }}>
+                <h4 className="ms-5 px-5" style={{ color: 'black' }}>
                   Order Items:
                 </h4>
 
@@ -271,15 +273,15 @@ const OrderStatus = () => {
                 )}
                 <div className="container col-12 col-lg-6 mx-auto">
                   <p style={{ display: 'flex', marginBottom: '1rem' }}>
-                    <b className="mx-2 text-white">Order Instruction:</b>{' '}
+                    <b className="mx-2 text-black">Order Instruction:</b>{' '}
                     {orderDetails?.orderInstruction || '-'}
                   </p>
                   <p style={{ display: 'flex', marginBottom: '1rem' }}>
-                    <b className="mx-2 text-white">Delivery Instruction :</b>{' '}
+                    <b className="mx-2 text-black">Delivery Instruction :</b>{' '}
                     {orderDetails?.deliveryInstruction || '-'}
                   </p>
-                  <h4 className="my-4 text-white">Status</h4>
-                  <p className="my-4 text-white">
+                  <h4 className="my-4 text-black">Status</h4>
+                  <p className="my-4 text-black">
                     <b>
                       Order Status:{' '}
                       <span style={{ color: 'green' }}>
@@ -304,13 +306,14 @@ const OrderStatus = () => {
                   <button
                     type="submit"
                     onClick={updateOrderStatus}
-                    className="my-global-button px-5 my-4 "
+                    className="btn my-5 px-4 btn border border-danger rounded bg-white w-100 text-black"
                   >
                     Update Status
                   </button>
                 </div>
               </div>
             </div>
+            </Card>
           </div>
         </div>
       </div>

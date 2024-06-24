@@ -1,29 +1,28 @@
 import { Link } from 'react-router-dom';
 // import Sidebar from './Sidebar';
 import './dashboard.css';
+import { Card } from 'react-bootstrap';
 
 const DashboardPage = () => {
   return (
     <div className="dashboardMainImg">
-      <div className="container-fluid" id="CardText">
+      <div className="container-fluid text-black bg-white">
         <div className="row">
           <div className="col">
-            <h1 className="my-4 text-black text-center">Dashboard</h1>
+            <Card className='my-5 Cardimg123'>
+            <h1 className="my-4 text-black fs-1 text-center">Dashboard</h1>
             <div className="row pr-4">
               <div className="col-xl-12 col-sm-12  mb-3">
-                <div className="card text-white" id="CardBackIMg1">
+                <div className="card text-white">
                   <div className="card-body">
-                    <div className="text-center card-font-size">
-                      <h1>Total Amount</h1>
-                      {/* <br /> <b>$3425</b> */}
-                    </div>
+  
                   </div>
                 </div>
               </div>
             </div>
-            <div className="row  h-100">
-              <div className="col-xl-3 col-sm-6 col-lg-6 mb-3">
-                <div className="card" id="CardBackIMg1">
+            <div className="row p-4">
+              <div className="col-xl-4 col-sm-6 col-lg-6 mb-3">
+                <div className="card">
                   <div className="card-body" id="Menu">
                     <div className="text-center card-font-size mt-4">
                       <h2>Menus</h2>
@@ -33,37 +32,37 @@ const DashboardPage = () => {
                   <Link
                     className="card-footer text-white clearfix small z-1"
                     to="/admin/menus"
-                    id="CardBackIMg1"
+                   
                   >
                     <span className="float-center">
-                      <h5>View Details</h5>
+                      <h5  className='text-black'>View Details</h5>
                     </span>
                   </Link>
                 </div>
               </div>
 
-              <div className="col-xl-3 col-sm-6 mb-3">
-                <div className="card text-white o-hidden " id="CardBackIMg1">
+              <div className="col-xl-4 col-sm-6 mb-3">
+                <div className="card text-white o-hidden ">
                   <div className="card-body">
                     <div className="text-center card-font-size mt-4">
-                      <h2>Orders</h2>
+                      <h2  className='text-black'>Orders</h2>
                       {/* <br /> <b>345</b> */}
                     </div>
                   </div>
                   <Link
                     to="/admin/orders"
                     className="card-footer text-white clearfix small z-1"
-                    id="CardBackIMg1"
+                   
                   >
                     <span className="float-left">
-                      <h5>View Details</h5>
+                      <h5  className='text-black'>View Details</h5>
                     </span>
                   </Link>
                 </div>
               </div>
 
-              <div className="col-xl-3 col-sm-6 mb-3">
-                <div className="card o-hidden" id="CardBackIMg1">
+              <div className="col-xl-4 col-sm-6 mb-3">
+                <div className="card o-hidden">
                   <div className="card-body">
                     <div className="text-center card-font-size mt-4">
                       <h2>Users</h2>
@@ -72,35 +71,55 @@ const DashboardPage = () => {
                   </div>
                   <Link
                     to="/admin/users"
-                    id="CardBackIMg1"
+                   
                     className="card-footer text-white clearfix small z-1"
                   >
                     <span className="float-left">
-                      <h5>View Details</h5>
+                      <h5  className='text-black'>View Details</h5>
                     </span>
                   </Link>
                 </div>
               </div>
-              <div className="col-xl-3 col-sm-6 mb-3">
-                <div className="card text-white o-hidden" id="CardBackIMg1">
+              <div className="col-xl-4 col-sm-6 mb-3">
+                <div className="card text-white o-hidden">
                   <div className="card-body">
                     <div className="text-center card-font-size mt-4">
-                      <h2>Restaurants</h2>
+                      <h2  className='text-black'>Restaurants</h2>
                       {/* <br /> <b>5</b> */}
                     </div>
                   </div>
                   <Link
                     to="/admin/restaurants"
-                    id="CardBackIMg1"
+                   
                     className="card-footer text-white clearfix small z-1"
                   >
                     <span className="float-left">
-                      <h5>View Details</h5>
+                      <h5  className='text-black'>View Details</h5>
+                    </span>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-xl-4 col-sm-6 mb-3">
+                <div className="card text-white o-hidden">
+                  <div className="card-body">
+                    <div className="text-center card-font-size mt-4">
+                      <h2  className='text-black'>Tax & Delivery Charges</h2>
+                      {/* <br /> <b>5</b> */}
+                    </div>
+                  </div>
+                  <Link
+                    to="/admin/settings"
+                   
+                    className="card-footer text-white clearfix small z-1"
+                  >
+                    <span className="float-left">
+                      <h5  className='text-black'>View Details</h5>
                     </span>
                   </Link>
                 </div>
               </div>
             </div>
+            </Card>
           </div>
         </div>
       </div>

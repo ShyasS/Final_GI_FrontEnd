@@ -1,11 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable global-require */
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable react/style-prop-object */
-/* eslint-disable react/no-this-in-sfc */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-shadow */
-/* eslint-disable no-underscore-dangle */
+
 import { React, useState, useEffect, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -102,7 +95,7 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav
               style={{ fontSize: '17px', fontWeight: '600', color: '#2a206b' }}
-              className="col-md-7 col-lg-10 mx-auto"
+              className="col-md-7 col-lg-11 col-xl-10 mx-auto "
             >
               {isloggedIn === 'true' ? (
                 <>
@@ -268,14 +261,11 @@ const Header = () => {
                     {!isLoggedIn ? (
                       <Nav.Link
                         style={{
-                          borderRadius: '30px',
                           width: '100px',
-                          backgroundColor: '#f0b06c',
                           textAlign: 'center',
-                          display: 'inline-block',
-                          borderColor: '#f0b06c'
+                          display: 'inline-block'
                         }}
-                        className="my-global-button mx-auto"
+                        className="btn border border-danger rounded mx-auto"
                         onClick={handleLogout}
                       >
                         Logout
@@ -285,14 +275,11 @@ const Header = () => {
                         <Stack direction="horizontal" gap={3} />
                         <Nav.Link
                           style={{
-                            borderRadius: '30px',
                             width: '100px',
-                            backgroundColor: '#f0b06c',
                             textAlign: 'center',
                             display: 'inline-block',
-                            borderColor: '#f0b06c'
                           }}
-                          className="my-global-button mx-auto"
+                          className="btn border border-danger rounded mx-auto"
                           as={Link}
                           to="/login"
                         >
@@ -318,19 +305,19 @@ const Header = () => {
                   </ul>
                   <div
                     className="logout-login-buttons"
-                    style={{ marginRight: '-10rem' }}
+                    style={{ marginRight: '-5rem' }}
                   >
                     <Stack direction="horizontal" gap={3} />
                     {isLoggedIn ? (
                       <Nav.Link
-                        className="my-global-button1 mx-auto"
+                        className="btn border border-danger rounded mx-auto"
                         style={{
-                          borderRadius: '30px',
                           width: '100px',
                           textAlign: 'center',
                           display: 'inline-block',
-                          backgroundColor: '#f0b06c',
-                          borderColor: '#f0b06c'
+                          borderRadius:'10px',
+                          backgroundColor:'white',
+                          borderColor: 'red'
                         }}
                         onClick={handleLogout}
                       >
@@ -341,14 +328,13 @@ const Header = () => {
                         <Stack direction="horizontal" gap={3} />
                         <Nav.Link
                           style={{
-                            borderRadius: '30px',
                             width: '100px',
                             textAlign: 'center',
                             display: 'inline-block',
-                            backgroundColor: '#f0b06c',
-                            borderColor: '#f0b06c'
+                            border:'red',
+
                           }}
-                          className="my-global-button1 mx-auto mt-lg-n1"
+                          className="btn border border-danger rounded  mx-auto mt-lg-n1"
                           as={Link}
                           to="/login"
                         >

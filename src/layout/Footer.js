@@ -1,4 +1,4 @@
-/* eslint-disable global-require */
+
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <div
       style={{
-        backgroundColor: '#0e1927',
+        backgroundColor: '#e6c5c5',
         color: 'white',
         padding: '20px 0'
         // overflow: 'hidden'
@@ -32,28 +32,28 @@ const Footer = () => {
           }}
           md={3}
         >
-          <Col md={3} xs={9}>
-            <h3 style={{ color: '#c6ac83', marginTop: '20px' }}>WE ARE HERE</h3>
-            <p>82 Place Charles de Gaulle, Paris</p>
-            <p>+91 801-555-99-43</p>
+          <Col md={3} xs={9} className='text-center text-black'>
+            <h3 style={{ color: '#c6ac83', marginTop: '20px' }} className='text-black'>WE ARE HERE</h3>
+            <p className='text-black'>82 Place Charles de Gaulle, Paris</p>
+            <p  className='text-black'>+91 801-555-99-43</p>
           </Col>
-          <Col md={1} xs={12}>
+          <Col md={1} xs={12} className='text-black'>
             <hr
               style={{
                 border: '0',
-                borderTop: '1px solid #c6ac83',
+                borderTop: '1px solid black',
                 marginTop: '20px',
                 width: '100%'
               }}
             />
           </Col>
-          <Col lg={3} xs={12} md={4}>
+          <Col lg={3} xs={12} md={4} className='text-black' >
             <Image
               src={require('../assets/img/grandIndiaLogo1.png')}
               style={{ height: '70px', width: '190px', marginLeft: '60px' }}
               className=""
             />
-            <p id="HomeSecRightMain2">
+            <p id="HomeSecRightMain2" className='text-black'>
               A distinctive, well-preserved and comfortable space, high-quality
               products, authentic cuisine, food and drinks are done flawlessly.
             </p>
@@ -69,16 +69,16 @@ const Footer = () => {
             />
           </Col>
           <Col md={1} xs={12}>
-            <hr style={{ color: '#c6ac83' }} />
+            <hr style={{ color: 'black' }} />
           </Col>
-          <Col md={3} xs={12}>
-            <h3 style={{ color: '#c6ac83', marginTop: '20px' }}>
+          <Col md={3} xs={12} className='text-center text-black'>
+            <h3 style={{ color: '#c6ac83', marginTop: '20px' }} className='text-black'>
               OPENING TIME
             </h3>
-            <p style={{ marginTop: '10px', color: '#c6ac83' }}>
+            <p style={{ marginTop: '10px', color: '#c6ac83' }} className='text-black'>
               82 Place Charles de Gaulle, Paris1
             </p>
-            <p style={{ color: '#c6ac83' }}>+91 801-555-99-433</p>
+            <p style={{ color: '#c6ac83' }} className='text-black'>+91 801-555-99-433</p>
           </Col>
         </Row>
       </Container>

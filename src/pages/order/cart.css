@@ -10,8 +10,6 @@
 }
 #CardText{
   color: rgb(9, 8, 8);
-  text-shadow: 1px 1px #d8c895;
-  background-color: transparent;
  }
 .quantity {
   /* border: 1px solid #ccc; */
@@ -21,17 +19,17 @@
   padding: 3px;
   margin-right: 5px; 
 }
-#CartMain{
-  background-image: linear-gradient(rgba(235, 231, 231, 0.963),rgb(234, 224, 224)),url('../../assets/img/HomeThirdMainImg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height:auto;
+.back{
+  
 }
-#CardDetail{
-  background: rgb(185, 184, 202);
-  background: linear-gradient(90deg, rgb(169, 167, 189) 18%, rgba(163, 174, 180, 0.88) 52%, rgb(218, 211, 211) 87%);
-  color: #f2f0ed !important;
+.CardDetail{
+  background: white;
+}
+.CardDetail112{
+  background: rgb(255, 255, 255);
+  filter:drop-shadow(6px 5px 6px rgb(250, 30, 30));
+  border-radius:10px;
+
 }
 #CardBackIMg{
   background-color: #c1bca183;

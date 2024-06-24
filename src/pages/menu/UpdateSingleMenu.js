@@ -1,17 +1,7 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-shadow */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-shadow */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Card } from 'react-bootstrap';
 
 const UpdateProduct = () => {
   const [name, setName] = useState('');
@@ -126,19 +116,18 @@ const UpdateProduct = () => {
   }, [productId]);
 
   return (
-    <div className="CreateMenu py-1 text-white">
+    <div className="bg-white py-1 text-black">
       <div className="container-fluid">
         <div className="row">
           {/* <div className=""> */}
           <div
             className="col-lg-8  mx-auto col-xs-12 col-md-10 my-5"
-            id="CardText"
           >
+            <Card className='Cardimg123'>
             <form
               onSubmit={submitHandler}
               className="shadow-lg p-4"
               encType="multipart/form-data"
-              id="CardBackIMg1"
             >
               <h1 className="mb-4">Update Product</h1>
 
@@ -262,7 +251,7 @@ const UpdateProduct = () => {
                     }}
                     type="file"
                     name="product_images"
-                    className="custom-file-input"
+                    className="btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black"
                     id="customFile"
                     multiple
                     onChange={onImagesChange}
@@ -284,7 +273,7 @@ const UpdateProduct = () => {
                 )}
                 {imagesPreview.map((image) => (
                   <img
-                    className="mt-3 mr-2"
+                    className="mt-3 mr-2 ms-2 rounded"
                     key={image}
                     src={image}
                     alt="Image Preview"
@@ -298,12 +287,13 @@ const UpdateProduct = () => {
                   id="login_button"
                   type="submit"
                   // className="btn btn-block py-3"
-                  className="my-global-button px-5 "
+                  className="btn my-3 px-4 btn border border-danger rounded bg-white  text-black px-5 "
                 >
                   UPDATE
                 </button>
               </div>
             </form>
+            </Card>
           </div>
         </div>
       </div>

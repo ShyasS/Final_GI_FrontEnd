@@ -1,10 +1,4 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable no-nested-ternary */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable react/prop-types */
+
 import React, { useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -93,19 +87,19 @@ const ReusableTable = ({
     });
 
     return sortedData.map((item, i) => (
-      <tr style={{ backgroundColor: 'transparent' }} key={item._id}>
+      <tr className='bg-white' style={{ backgroundColor: 'white' }} key={item._id}>
         {headers.map((header) => {
           if (header === 'Sl No') {
             return (
               <td key={header}>
-                <p id="CardText">{i + 1}</p>
+                <p className='text-black' id="CardText">{i + 1}</p>
               </td>
             );
           }
           if (header === 'Restaurant Address') {
             return (
               <td key={header}>
-                <p id="CardText">
+                <p  className='text-black' id="CardText">
                   {item.address.line1}, {item.address.line2},{' '}
                   {item.address.city}, {item.address.state},{' '}
                   {item.address.postalCode}, {item.address.country}
@@ -116,7 +110,7 @@ const ReusableTable = ({
           if (header === 'Order ID') {
             return (
               <td key={header}>
-                <p id="CardText">{item._id}</p>
+                <p  className='text-black' id="CardText">{item.orderId}</p>
               </td>
             );
           }
@@ -135,7 +129,7 @@ const ReusableTable = ({
             return (
               <td key={header}>
                 {' '}
-                <p id="CardText">{item.text}</p>
+                <p  className='text-black' id="CardText">{item.text}</p>
               </td>
             );
           }
@@ -143,7 +137,7 @@ const ReusableTable = ({
             return (
               <td key={header}>
                 {' '}
-                <p id="CardText">{item.restaurantId}</p>
+                <p  className='text-black' id="CardText">{item.restaurantId}</p>
               </td>
             );
           }
@@ -151,7 +145,7 @@ const ReusableTable = ({
             return (
               <td key={header}>
                 {' '}
-                <p id="CardText">{item.restaurantName}</p>
+                <p  className='text-black' id="CardText">{item.restaurantName}</p>
               </td>
             );
           }
@@ -159,14 +153,14 @@ const ReusableTable = ({
             return (
               <td key={header}>
                 {' '}
-                <p id="CardText">{item.openingHours}</p>
+                <p  className='text-black' id="CardText">{item.openingHours}</p>
               </td>
             );
           }
           if (header === 'Restaurant Branch') {
             return (
               <td key={header} onClick={() => handleSort('restaurantBranch')}>
-                <p id="CardText">{item.restaurantBranch} </p>
+                <p  className='text-black' id="CardText">{item.restaurantBranch} </p>
               </td>
             );
           }
@@ -174,7 +168,7 @@ const ReusableTable = ({
             return (
               <td key={header}>
                 {' '}
-                <p id="CardText">{item._id}</p>
+                <p  className='text-black' id="CardText">{item._id}</p>
               </td>
             );
           }
@@ -182,7 +176,7 @@ const ReusableTable = ({
             return (
               <td key={header}>
                 {' '}
-                <p id="CardText">{item.orderStatus}</p>{' '}
+                <p  className='text-black' id="CardText">{item.orderStatus}</p>{' '}
               </td>
             );
           }
@@ -190,7 +184,7 @@ const ReusableTable = ({
             return (
               <td key={header}>
                 {' '}
-                <p id="CardText">{item.selectedTimeSlot}</p>
+                <p  className='text-black' id="CardText">{item.selectedTimeSlot}</p>
               </td>
             );
           }
@@ -198,7 +192,7 @@ const ReusableTable = ({
             return (
               <td key={header}>
                 {' '}
-                <p id="CardText">{item.createdAt}</p>
+                <p  className='text-black' id="CardText">{item.createdAt}</p>
               </td>
             );
           }
@@ -206,7 +200,7 @@ const ReusableTable = ({
             return (
               <td key={header}>
                 {' '}
-                <p id="CardText">{item.shipping.phone}</p>
+                <p  className='text-black' id="CardText">{item.shipping.phone}</p>
               </td>
             );
           }
@@ -214,18 +208,18 @@ const ReusableTable = ({
             return (
               <td key={header}>
                 {' '}
-                <p id="CardText">{item.shipping.email}</p>
+                <p  className='text-black' id="CardText">{item.shipping.email}</p>
               </td>
             );
           }
           if (header === 'Category') {
             return (
               <td key={header}>
-                <p id="CardText">
+                <p  className='text-black' id="CardText">
                   {' '}
                   <b>MealType: </b> {item.mealTypeCategory},
                 </p>
-                <p id="CardText">
+                <p  className='text-black' id="CardText">
                   {' '}
                   <b>Dietary Preference: </b> {item.dietaryPreferenceCategory}
                 </p>
@@ -235,7 +229,7 @@ const ReusableTable = ({
           if (header === 'Menu Name') {
             return (
               <td key={header} onClick={() => handleSort('name')}>
-                <p id="CardText"> {item.name} </p>
+                <p className='text-black' id="CardText"> {item.name} </p>
               </td>
             );
           }
@@ -286,7 +280,7 @@ const ReusableTable = ({
         {onUpdate && (
           <td>
             <Button
-              className="my-global-button"
+              className=" btn my-3 px-4 btn border border-danger rounded bg-white text-black "
               onClick={() => onUpdate(item._id)}
             >
               <FontAwesomeIcon icon={faEdit} />
@@ -296,7 +290,7 @@ const ReusableTable = ({
         {update && (
           <td>
             <Button
-              className="my-global-button"
+              className="btn my-3 px-4 btn border border-danger rounded bg-white text-black"
               onClick={() => update(item._id)}
             >
               Update
@@ -306,7 +300,7 @@ const ReusableTable = ({
         {onEdit && (
           <td>
             <Button
-              className="my-global-button"
+              className="btn my-3 px-4 btn border border-danger rounded bg-white text-black"
               onClick={() => onEdit(item._id)}
             >
               <FontAwesomeIcon icon={faEye} />
@@ -317,7 +311,7 @@ const ReusableTable = ({
         {onDelete && (
           <td>
             <Button
-              className="my-global-button"
+              className="btn my-3 px-4 btn border border-danger rounded bg-white text-black"
               onClick={() => onDelete(item._id)}
             >
               <FontAwesomeIcon icon={faTrash} />
@@ -327,7 +321,7 @@ const ReusableTable = ({
         {onViewDetails && (
           <td>
             <Button
-              className="my-global-button with-border-radius"
+              className="btn my-3 px-4 btn border border-danger rounded bg-white text-black"
               onClick={() => onViewDetails(item._id)}
             >
               <FontAwesomeIcon icon={faEye} />
@@ -337,7 +331,7 @@ const ReusableTable = ({
         {onAddMenu && (
           <td>
             <Button
-              className="my-global-button"
+              className="btn my-3 px-4 btn border border-danger rounded bg-white text-black"
               onClick={() => onAddMenu(item._id)}
             >
               Add Menu
@@ -350,8 +344,8 @@ const ReusableTable = ({
 
   return (
     <div>
-      <Table bordered responsive className=" mt-4 text-center w-100 ">
-        <thead className="table-head" id="CardBackIMg1">
+      <Table bordered responsive className=" mt-4 text-center w-100 Cardimg123">
+        <thead className="table-head bg-white">
           <tr>
             {headers.map((header) => (
               <th

@@ -1,9 +1,3 @@
-/* eslint-disable no-alert */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-shadow */
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable react/no-array-index-key */
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Card } from 'react-bootstrap';
@@ -57,9 +51,9 @@ const CreateRestaurant = () => {
   };
 
   return (
-    <div className="MenuHeaderMain1 py-4">
-      <Card className="col-md-5 container py-4" id="CardBackIMg1">
-        <h4>Create a New Restaurant</h4>
+    <div className="bg-white text-black py-4">
+      <Card className="col-md-5 container py-4 my-5 Cardimg123">
+        <h4 className='text-black'>Create a New Restaurant</h4>
         <form onSubmit={handleSubmit} className="address-container">
           {/* Add input fields for each restaurant property */}
           <div className="mb-3">
@@ -329,7 +323,7 @@ const CreateRestaurant = () => {
             />
           </div>
           <div className="d-flex justify-content-center">
-            <button className="btn my-global-button mb-3 mt-3" type="submit">
+            <button className=" btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black" type="submit">
               Create Restaurant
             </button>
           </div>

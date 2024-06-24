@@ -1,7 +1,3 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable react/prop-types */
-/* eslint-disable camelcase */
 import React, { useEffect } from 'react';
 import './index.css';
 import { Card } from 'react-bootstrap';
@@ -32,13 +28,12 @@ const BillingAddress = ({
   }, [streetAddress, postalCode, city, state, country]);
 
   return (
-    <Card className="my-3 p-3 bg-transparent">
-      <h4 id="CardText">Billing Address</h4>
+    <Card className="my-3 p-3 bg-white">
+      <h4>Billing Address</h4>
       <div className="mb-3 address-container">
         <label
           htmlFor="streetAddress"
           className="form-label"
-          id="CardText"
           style={{ color: 'black', backgroundColor: 'transparent' }}
         >
           Street Address{' '}
@@ -59,7 +54,7 @@ const BillingAddress = ({
         />
       </div>
       <div className="mb-3 address-container">
-        <label id="CardText" htmlFor="zipCode" className="form-label">
+        <label htmlFor="zipCode" className="form-label text-black">
           ZIP Code{' '}
           <span className="text-danger">
             {' '}
@@ -78,7 +73,7 @@ const BillingAddress = ({
         />
       </div>
       <div className="mb-3 address-container">
-        <label id="CardText" htmlFor="city" className="form-label">
+        <label  htmlFor="city" className="form-label text-black ">
           City{' '}
           <span className="text-danger">
             {' '}
@@ -97,7 +92,7 @@ const BillingAddress = ({
         />
       </div>
       <div className="mb-3 address-container">
-        <label htmlFor="state" id="CardText" className="form-label">
+        <label htmlFor="state" className="form-label text-black">
           State{' '}
           <span className="text-danger">
             {' '}
@@ -116,7 +111,7 @@ const BillingAddress = ({
         />
       </div>
       <div className="mb-3 address-container">
-        <label htmlFor="state" id="CardText" className="form-label">
+        <label htmlFor="state"  className="form-label text-black">
           Country{' '}
           <span className="text-danger">
             {' '}

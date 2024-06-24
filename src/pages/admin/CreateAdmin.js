@@ -68,18 +68,17 @@ const CreateAdmin = () => {
   }, []);
 
   return (
-    <div className="MenuHeaderMain1 py-5">
+    <div className="bg-white text-black py-5">
       <Card
-        className="address-container container  p-4 col-md-8 col-lg-6 col-xl-4"
-        id="CardBackIMg1"
+        className="address-container container  p-4 col-md-8 col-lg-6 col-xl-4 Cardimg123"
       >
-        <form onSubmit={handleSubmit} id="CardText">
+        <form onSubmit={handleSubmit} className='text-black'>
           <div>
-            <h2>Create Admin</h2>
+            <h2 className='text-black'>Create Admin</h2>
           </div>
 
           <div className="mb-3">
-            <label htmlFor="name">
+            <label htmlFor="name"  >
               First name:
               <span className="text-danger">
                 {' '}
@@ -247,7 +246,7 @@ const CreateAdmin = () => {
             />
           </div>
           <div className="mb-3 d-flex justify-content-center">
-            <Button type="submit" className=" my-global-button mb-4 mt-3">
+            <Button type="submit" className=" btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black mb-4 mt-3">
               Create Admin
             </Button>
           </div>

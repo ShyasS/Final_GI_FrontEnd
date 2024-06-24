@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
 import { sendLoginOtp } from '../../../redux-toolkit/actions/auth';
 import './login.scss';
+import { Card } from 'react-bootstrap';
 
 const SendLoginOtp = () => {
   const navigate = useNavigate();
@@ -39,8 +40,9 @@ const SendLoginOtp = () => {
     }
   };
   return (
-    <div id="ForgetPMainImg" className="py-4">
+    <div className="bg-white py-4">
       <div className="container-fluid mx-auto col-md-5 mt-5 mb-4 signup-form-container ">
+        <Card className="bg-white Cardimg123">
         <form onSubmit={handleLogin}>
           <div className="row  custom-table mx-3 my-5" id="CardBackIMg1">
             <div className="col-11 mx-auto">
@@ -48,7 +50,7 @@ const SendLoginOtp = () => {
                 Send OTP
               </h4>
               <div className="mb-3">
-                <label className="form-label mt-2" id="CardText">
+                <label className="form-label mt-2 text-black">
                   Email
                   <span className="text-danger">
                     {' '}
@@ -71,7 +73,7 @@ const SendLoginOtp = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn w-25 mb-4 mt-2 "
+                  className="btn my-3 px-4 btn border border-danger rounded bg-white text-black w-100 mb-4 mt-2 "
                   style={{ backgroundColor: '#bd870b', borderRadius: '30px' }}
                 >
                   Submit
@@ -80,6 +82,7 @@ const SendLoginOtp = () => {
             </div>
           </div>
         </form>
+        </Card>
       </div>
     </div>
   );

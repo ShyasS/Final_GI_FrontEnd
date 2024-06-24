@@ -1,10 +1,4 @@
-.ConfirmOrderMainImg{
-  background-image: linear-gradient(rgba(235, 231, 231, 0.963),rgb(234, 224, 224)),url('../../assets/img/HomeThirdMainImg.jpg');
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+
 #CardLogText{
     color: white;
     text-shadow: 1px 1.7px #5a3a07;
@@ -15,10 +9,12 @@
     color: white
 }
 
-#CardBackIMg{
-    background: rgb(185, 184, 202);
-    background: linear-gradient(90deg, rgb(184, 181, 221) 18%, rgba(220, 227, 231, 0.88) 52%, rgb(255, 255, 255) 87%);
-  }
+#CardBackIMg156{
+  filter:drop-shadow(6px 5px 6px rgb(250, 30, 30));
+}
+.back{
+  background-color: white !important;
+}
 
   h1,h2,h3,h4,h5,h6,p,ul,li,button,label,div{
     font-family: "Recursive", sans-serif !important;

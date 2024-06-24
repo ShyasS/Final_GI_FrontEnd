@@ -1,9 +1,4 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-shadow */
-/* eslint-disable no-plusplus */
-/* eslint-disable react/button-has-type */
+
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
 import './ProductModal.css';
@@ -12,7 +7,7 @@ import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const RestaurantSelection = () => {
   const [restaurantId, setRestaurantId] = useState('');
@@ -137,12 +132,13 @@ const RestaurantSelection = () => {
             xs={12}
             sm={12}
           >
-            <Card className=" mx-auto mt-lg-5 mt-md-2" id="CardBackIMg1">
+            <Card className=" mx-auto mt-lg-5 mt-md-2" id="CardBackIMg122">
               <Card.Body>
                 <div className="d-flex p-3 justify-content-start">
                   <button
                     onClick={handleGoBack}
-                    className="btn my-global-button text-white"
+                    // className="btn my-global-button text-white"
+                    className='btn btn my-color text-black'
                     type="button"
                   >
                     <FaArrowLeft /> Back
@@ -242,12 +238,14 @@ const RestaurantSelection = () => {
                   </p>
                 </div>
               </Card.Body>
-              <div className="modal-footer px-4">
+              <div className="d-flex justify-content-end mb-4  px-4">
                 <button
-                  className="btn my-global-button"
+                  // className="btn my-global-button"
+                   className='btn btn my-color text-black'
                   onClick={handleContinue}
                 >
                   Continue
+                  <FaArrowRight/>
                 </button>
               </div>
             </Card>

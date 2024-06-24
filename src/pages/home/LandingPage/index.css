@@ -3,7 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Dancing+Script:wght@400..700&family=Recursive:wght@300..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sahitya:wght@400;700&display=swap');
 .HomeMainFirst {
-  background-image: linear-gradient(rgba(22, 19, 52, 0.7), rgba(8, 6, 36, 0.7)), url('../../../assets/img/HomePageDownload.jpg');
+  background-image: linear-gradient(rgba(138, 100, 100, 0.7), rgba(142, 97, 97, 0.7)), url('../../../assets/img/HomePageDownload.jpg');
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -89,7 +89,8 @@ p {
 }
 
 .HomeSecondMain {
-  background-image: linear-gradient(rgba(235, 231, 231, 0.963),rgb(234, 224, 224)),url('../../../assets/img/HomeThirdMainImg.jpg') !important;
+  /* background-image: linear-gradient(rgba(235, 231, 231, 0.963),rgb(234, 224, 224)),url('../../../assets/img/HomeThirdMainImg.jpg') !important; */
+  background: rgb(249, 233, 233) !important;
   color:white ;
   text-shadow: 1px 1px  #cc891d;
 }

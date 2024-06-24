@@ -1,10 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-shadow */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-underscore-dangle */
-// /* eslint-disable no-underscore-dangle */
-
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
@@ -126,24 +119,23 @@ const UsersList = () => {
   }, [currentPage]);
 
   return (
-    <div className="MenuHeaderMain1" style={{ minHeight: '58vh' }}>
+    <div className="bg-white text-black" style={{ minHeight: '58vh' }}>
       <div className="container-fluid">
         <div className="row">
           <div
-            className="col-lg-12 col-xs-12 col-sm-12 col-md-12"
-            id="CardText"
+            className="col-lg-12 col-xs-12 col-sm-12 col-md-12 text-black"
           >
-            <h5 className="mt-3 " style={{ fontWeight: 'bold' }}>
+            <h5 className="mt-3 text-black" style={{ fontWeight: 'bold' }}>
               <></>USERS - Admin
             </h5>
             <div className="row">
-              <div className="col-lg-3 col-md-4 col-xs-12">
-                <label>Filter by Role:</label>
+              <div className="col-lg-3 col-md-4 text-black col-xs-12">
+                <label className='text-black'>Filter by Role:</label>
                 <div className="mx-4">
                   <select
                     value={selectedRoleFilter}
                     onChange={handleRoleFilterChange}
-                    className="form-control mt-3"
+                    className="form-control mt-3 text-black"
                   >
                     {/* <option value="">All</option> */}
                     <option value="admin">Admin</option>
@@ -153,7 +145,7 @@ const UsersList = () => {
               </div>
               <div className="col-lg-3 col-xs-6 col-md-4 mx-auto ">
                 <Link
-                  className="btn my-global-button mt-3"
+                  className="btn my-3 px-4 btn border border-danger rounded bg-white  text-black mt-3"
                   style={{ background: '#51bc8fb5' }}
                   to="/admin/customer/list"
                 >
@@ -161,7 +153,7 @@ const UsersList = () => {
                 </Link>
               </div>
               <div className="col-lg-3 col-md-4 col-xs-6 mt-3 ">
-                <button className="btn my-global-button" onClick={handleAdd}>
+                <button className="btn my-1 px-4 btn border border-danger rounded bg-white  text-black" onClick={handleAdd}>
                   Create Admin
                 </button>
               </div>
@@ -177,7 +169,7 @@ const UsersList = () => {
                   actions: (
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
                       <Button
-                        className="my-global-button"
+                        className="btn my-1 px-3 btn border border-danger rounded bg-white  text-black"
                         onClick={() => handleDelete(user._id)}
                       >
                         <FontAwesomeIcon icon={faTrash} />

@@ -1,7 +1,3 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-shadow */
-/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -153,6 +149,30 @@ const Home = () => {
     setSearchTerm('');
   };
 
+  // const handleAdd = (item) => {
+  //   if (item.isAvailable === false) return;
+
+  //   const updatedQuantities = {
+  //     ...localQuantities,
+  //     [item._id]: (localQuantities[item._id] || 0) + 1
+  //   };
+
+  //   setLocalQuantities(updatedQuantities);
+
+  //   const updatedCartItems = cartItems.map((cartItem) => {
+  //     if (cartItem._id === item._id) {
+  //       return { ...cartItem, quantity: (cartItem.quantity || 0) + 1 };
+  //     }
+  //     return cartItem;
+  //   });
+
+  //   setCartItems(updatedCartItems);
+
+  //   // Update localStorage
+  //   localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  //   localStorage.setItem('localQuantities', JSON.stringify(updatedQuantities));
+  // };
+
   const handleAdd = (item) => {
     if (item.isAvailable === false) return;
 
@@ -172,10 +192,41 @@ const Home = () => {
 
     setCartItems(updatedCartItems);
 
-    // Update localStorage
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     localStorage.setItem('localQuantities', JSON.stringify(updatedQuantities));
   };
+
+
+  // const handleMinus = (item) => {
+  //   if (item.isAvailable === false) return;
+
+  //   const updatedQuantities = {
+  //     ...localQuantities,
+  //     [item._id]: Math.max((localQuantities[item._id] || 0) - 1, 0)
+  //   };
+
+  //   setLocalQuantities(updatedQuantities);
+
+  //   const updatedCartItems = cartItems
+  //     .map((cartItem) => {
+  //       if (cartItem._id === item._id) {
+  //         return {
+  //           ...cartItem,
+  //           quantity: Math.max((cartItem.quantity || 0) - 1, 0)
+  //         };
+  //       }
+  //       return cartItem;
+  //     })
+  //     .filter((cartItem) => cartItem.quantity > 0);
+  //   setCartItems(updatedCartItems);
+
+  //   setCartItems(updatedCartItems);
+
+  //   // Update localStorage
+  //   localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  //   localStorage.setItem('localQuantities', JSON.stringify(updatedQuantities));
+  // };
+
 
   const handleMinus = (item) => {
     if (item.isAvailable === false) return;
@@ -200,12 +251,10 @@ const Home = () => {
       .filter((cartItem) => cartItem.quantity > 0);
     setCartItems(updatedCartItems);
 
-    setCartItems(updatedCartItems);
-
-    // Update localStorage
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     localStorage.setItem('localQuantities', JSON.stringify(updatedQuantities));
-  };
+  }
+
 
   const handleDelete = (itemId) => {
     try {
@@ -273,7 +322,9 @@ const Home = () => {
     dietaryPreferenceCategory,
     branch
   ]);
-
+  const handlegoback = () => {
+    navigate(-1);
+  }
   useEffect(() => {
     axios
       .get('/api/dietary-preferences')
@@ -294,69 +345,40 @@ const Home = () => {
 
   return (
     <>
-      {/* <div className="ProductImg1">
-        <p className="text-white text-center" style={{ paddingTop: '100px', fontSize:'60px' }}>
-          <span style={{ opacity: '0.5' }}>--</span> MENU LIST{' '}
-          <span style={{ opacity: '0.5' }}>--</span>
-        </p>
-      </div> */}
       <Col md={12} lg={12} xs={12} sm={12}>
         <div className="Product2Comp text-center">
-          <h3 className="py-4" id="Product2H3" style={{ color: ' #c6ac83' }}>
+          <h3 className="py-4" id="Product2H3" style={{ color: 'black' }}>
             What food do we have in our restaurant?
           </h3>
-          <h2 className="mt-2" style={{ color: '#dadce0' }}>
+          <h2 className="mt-2" style={{ color: 'black' }}>
             FROM OUR MENU
           </h2>
-          <p className="mt-5 " style={{ color: ' #c6ac83' }}>
+          <p className="mt-5 " style={{ color: ' black' }}>
             We always give our customers a feeling of peace of mind and comfort
             when dining at our restaurant
           </p>
-          <p style={{ color: ' #c6ac83', paddingBottom: '30px' }}>
+          <p style={{ color: ' black', paddingBottom: '30px' }}>
             Sed ut perspiciatis unde omnis iste natus error voluptate
             accusantium
           </p>
         </div>
       </Col>
       <div className="Product3Comp ">
-        <div style={{}} className="pt-3 float-end px-3" id="ShoppingCart">
-          <Button
-            as={Link}
-            to="/cart"
+        <Button
+          className="filter-icon my-2 text-center ms-md-5  mt-3 mx-auto"
+          variant="light"
+          onClick={handleShow}
+        >Filter{' '}
+          <FontAwesomeIcon
             style={{
               border: 'none',
-              backgroundColor: 'orange',
-              color: 'white',
-              borderRadius: '30px',
-              marginTop: '40px'
+              color: 'red',
+              backgroundColor: 'transparent'
             }}
-          >
-            <i className="fa-solid fa-cart-shopping fa-xl " />
-            <span>{items}</span>
-          </Button>{' '}
-          <br />
-          <Button
-            style={{
-              border: 'none',
-              backgroundColor: 'orange',
-              borderRadius: '30px',
-              padding: '6px 26px'
-            }}
-            className="filter-icon my-2 text-center"
-            variant="light"
-            // onClick={handleToggleFilterPanel}
-            onClick={handleShow}
-          >
-            <FontAwesomeIcon
-              style={{
-                border: 'none',
-                color: 'white',
-                backgroundColor: 'transparent'
-              }}
-              icon={faFilter}
-            />
-          </Button>
-        </div>
+            icon={faFilter}
+          />
+        </Button>
+
         <Container fluid>
           <Row>
             {showFilterPanel && (
@@ -388,11 +410,22 @@ const Home = () => {
             </Col>
             {/* )} */}
           </Row>
+          <div className=" col-12 d-flex justify-content-center">
+            <button
+              id="checkout_btn"
+              onClick={handlegoback}
+              className="btn back my-4 ms-md-5 "
+            >
+              Back to Select
+            </button>
+          </div>
           <div>
+
             <Modal
               style={{ backgroundColor: 'transparent' }}
               show={showModal}
               onHide={handleClose}
+              className='CardImg12'
             >
               <Modal.Header closeButton>
                 <Modal.Title>Filter Panel</Modal.Title>
@@ -409,7 +442,7 @@ const Home = () => {
                 />
               </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant="secondary" className=' btn btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black' onClick={handleClose}>
                   Close
                 </Button>
               </Modal.Footer>

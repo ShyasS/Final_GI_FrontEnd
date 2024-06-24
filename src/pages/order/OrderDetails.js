@@ -39,8 +39,8 @@ const OrderDetails = () => {
   }, [id]); // Empty dependency array ensures the effect runs only once
 
   return (
-    <div className="container-fluid py-5" id="ProfileMainImg">
-      <div className="row col-lg-9 custom-table mx-auto" id="CardBackIMg">
+    <div className="container-fluid py-5 bg-white">
+      <div className="row col-lg-9 custom-table mx-auto bg-white Cardimg123" >
         <div className="col">
           <div className="row d-flex justify-content-around">
             <div className="col-12 col-lg-4 order-details">

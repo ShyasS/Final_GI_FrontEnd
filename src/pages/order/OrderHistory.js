@@ -1,9 +1,3 @@
-/* eslint-disable import/order */
-/* eslint-disable no-new */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-shadow */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -123,7 +117,7 @@ const OrdersHistory = () => {
     fetchRestaurants();
   }, []);
   return (
-    <div className="MenuHeaderMain1">
+    <div className="bg-white text-black">
       <div className="container-fluid" id="CardText">
         <div className="row">
           <h4 className="mt-4 mb-4 text-center " style={{ fontWeight: 'bold' }}>

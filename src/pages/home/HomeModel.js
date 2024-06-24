@@ -4,11 +4,7 @@ import React from 'react';
 import './homeModel.css';
 
 const ProductModal = () => {
-  return (
-    <div className="modal-overlay">
-      <div className="modal" />
-    </div>
-  );
+  return <></>;
 };
 
 export default ProductModal;

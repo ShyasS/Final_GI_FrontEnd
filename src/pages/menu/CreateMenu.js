@@ -1,15 +1,7 @@
-/* eslint-disable no-alert */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-shadow */
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable react/no-array-index-key */
-
 import { useEffect, useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Button, Form, Modal } from 'react-bootstrap';
+import { Button, Card, Form, Modal } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import CategoryList from './dietaryPreferenceCategoryList';
@@ -261,10 +253,10 @@ export default function CreateMenu() {
   }, [selectedBranch, restaurantBranch]);
 
   return (
-    <div className="CreateMenu py-1 text-white">
-      <div className="container-fluid" id="CardBackIMg1">
-        <>
-          <div className="my-5" id="CardText">
+    <div className=" bg-white py-1 text-white">
+      <div className="container-fluid bg-white text-black my-5">
+        <Card className='Cardimg123 bg-white' >
+          <div className="my-5 text-black bg-white" >
             <form
               onSubmit={submitHandler}
               className="address-container shadow-lg "
@@ -544,7 +536,7 @@ export default function CreateMenu() {
                       id="login_button"
                       type="submit"
                       disabled={loading}
-                      className="my-global-button px-5 mx-5"
+                      className="btn my-3 px-4 btn  border border-danger rounded bg-white  text-black px-5 mx-5"
                     >
                       CREATE
                     </button>
@@ -694,7 +686,7 @@ export default function CreateMenu() {
               </Modal>
             )}
           </div>
-        </>
+        </Card>
       </div>
     </div>
   );

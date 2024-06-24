@@ -1,17 +1,12 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-useless-catch */
-/* eslint-disable no-shadow */
-/* eslint-disable no-unused-vars */
-/* eslint-disable camelcase */
-
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import PersonalDetails from './PersonalDetails';
 import OrderDetails from './OrderDetails';
 import DeliveryAddress from './DeliveryAddress';
 import BillingAddress from './BillingAddress';
 import './ShippingInfo.css';
+import { Card } from 'react-bootstrap';
 
 const ShippingInfo1 = () => {
   const navigate = useNavigate();
@@ -529,6 +524,9 @@ const ShippingInfo1 = () => {
     billingState,
     billingCountry
   ]);
+  const handlegoback = () =>{
+    navigate(-1);
+  }
   useEffect(() => {
     localStorage.setItem(
       'deliveryAddress',
@@ -575,8 +573,9 @@ const ShippingInfo1 = () => {
   }, [billingVerified, deliveryVerified, orderType, navigate]);
 
   return (
-    <div id="ShippingInfo" className="py-5">
-      <div className="container col-md-5 custom-table my-4" id="CardBackIMg">
+    <div  className="py-5 bg-white" >
+      <div className="container col-md-5 custom-table my-4">
+        <Card className="Cardimg123">
         <form className="checkout-form" onSubmit={handleSubmit}>
           {!isLoggedIn && (
             <PersonalDetails
@@ -667,12 +666,22 @@ const ShippingInfo1 = () => {
           <div className="d-flex justify-content-center">
             <button
               type="submit"
-              className="btn my-global-button btn-primary mb-4 "
+              className="btn back mb-4 "
             >
               Continue
             </button>
           </div>
+          <div className=" col-12 d-flex justify-content-center">
+            <button
+              id="checkout_btn"
+              onClick={handlegoback}
+              className="btn back mb-4 mx-auto"
+            >
+              Back to Cart
+            </button>
+          </div>
         </form>
+        </Card>
       </div>
     </div>
   );

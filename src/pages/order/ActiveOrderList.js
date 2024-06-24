@@ -1,14 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-unused-vars */
-// export default OrdersTable;
-/* eslint-disable no-plusplus */
-/* eslint-disable import/order */
-/* eslint-disable no-param-reassign */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-undef */
-/* eslint-disable no-shadow */
-/* eslint-disable no-underscore-dangle */
 
 import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
@@ -161,13 +150,13 @@ const OrdersTable = () => {
   }, []);
 
   return (
-    <div className="ActiveOrders1" style={{ minHeight: '58vh' }}>
+    <div className="bg-white text-black" style={{ minHeight: '58vh' }}>
       <div className="container-fluid py-2">
         <h4 className="text-center">Current orders</h4>
         <div className="row justify-content-end">
           {/* <div className="col-lg-4" /> */}
           <div className="col-lg-9 mx-auto">
-            <h5 className="mt-3">Select order type</h5>
+            <h5 className="mt-3 text-black">Select order type</h5>
             <label>
               <input
                 id="pickup"
@@ -177,13 +166,13 @@ const OrdersTable = () => {
                 checked={orderType === 'Pickup'}
                 onChange={() => handleOrderTypeChange('Pickup')}
               />{' '}
-              <span>Pickup</span>
+              <span className='text-black'>Pickup</span>
             </label>{' '}
             <label>
               <input
                 id="delivery"
                 type="radio"
-                className="ms-2"
+                className="ms-2 className='text-black'"
                 name="orderType"
                 value="Delivery"
                 checked={orderType === 'Delivery'}
@@ -192,7 +181,7 @@ const OrdersTable = () => {
               <span>Delivery</span>
             </label>{' '}
             <button
-              className="my-global-button btn mb-2 ms-2"
+              className="btn my-3 px-4 btn border border-danger rounded bg-white text-black mb-2 ms-2"
               onClick={handleClear}
               style={{ backgroundColor: 'transparent', border: 'none' }}
             >
@@ -202,7 +191,7 @@ const OrdersTable = () => {
               {availableDates.map((date) => (
                 <Button
                   key={date}
-                  className="my-global-button"
+                  className="btn my-3 px-4 btn border border-danger rounded bg-white  text-black"
                   value={date}
                   onClick={() => handleDateSelection(date)}
                   style={{
@@ -245,7 +234,7 @@ const OrdersTable = () => {
             )}
             <h5 className="mt-2">Update order</h5>
             <select
-              className="form-control mb-2"
+              className="form-control mb-2 text-black"
               value={selectedOrderStatus}
               required
               onChange={(e) => setSelectedOrderStatus(e.target.value)}

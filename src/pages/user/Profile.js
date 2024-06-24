@@ -1,8 +1,3 @@
-/* eslint-disable no-alert */
-/* eslint-disable global-require */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import { Modal, Button, Form, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
@@ -41,37 +36,40 @@ export default function Profile() {
   };
 
   const handleEditProfile = async () => {
-    const isValid =
-      isFormValid.oldPassword &&
-      isFormValid.password &&
-      isFormValid.confirmPassword;
-
-    if (!isValid) {
-      alert('Please provide all the fields in the form.');
-      return;
-    }
-
-    try {
-      if (password === confirmPassword) {
-        const response = await axios.put(`/api/password/change/${userId}`, {
-          oldPassword,
-          password,
-          confirmPassword
-        });
-
-        const successMessage = response.data.message;
-        alert(successMessage);
-        handleCloseEditModal();
-      } else {
-        alert('New password and confirm password must be the same.');
-      }
-    } catch (error) {
-      const errorMessage =
-        error.response?.data?.message ||
-        'An error occurred while updating the password.';
-      alert(errorMessage);
-    }
+    navigate('/password/forgot');
   };
+  // const handleEditProfile = async () => {
+  //   const isValid =
+  //     isFormValid.oldPassword &&
+  //     isFormValid.password &&
+  //     isFormValid.confirmPassword;
+
+  //   if (!isValid) {
+  //     alert('Please provide all the fields in the form.');
+  //     return;
+  //   }
+
+  //   try {
+  //     if (password === confirmPassword) {
+  //       const response = await axios.put(`/api/password/change/${userId}`, {
+  //         oldPassword,
+  //         password,
+  //         confirmPassword
+  //       });
+
+  //       const successMessage = response.data.message;
+  //       alert(successMessage);
+  //       handleCloseEditModal();
+  //     } else {
+  //       alert('New password and confirm password must be the same.');
+  //     }
+  //   } catch (error) {
+  //     const errorMessage =
+  //       error.response?.data?.message ||
+  //       'An error occurred while updating the password.';
+  //     alert(errorMessage);
+  //   }
+  // };
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -86,8 +84,10 @@ export default function Profile() {
     fetchUser();
   }, []);
 
+
+
   return (
-    <div id="ProfileMainImg1" className="py-5 bg">
+    <div className="bg-white py-5 bg">
       <div className="col-10 mx-auto mt-4 row justify-content-around">
         <MetaData title={user.name} />
         <Container>
@@ -98,7 +98,7 @@ export default function Profile() {
               </h1>
             </div>
             <Col lg={{ span: 5, offset: 0 }} md={12}>
-              <Card className=" borderUp mb-5 mt-3" id="CardBackIMg1">
+              <Card className=" Cardimg123 mb-5 mt-3 ">
                 <figure className="my-4 avatar avatar-profile" id="CardText">
                   <img
                     className="rounded-circle img-fluid"
@@ -109,7 +109,7 @@ export default function Profile() {
                 <div className="row-buttons col-9 mx-auto">
                   <div>
                     <button
-                      className="btn my-global-button my-2"
+                      className="btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black my-2"
                       onClick={handleEdit}
                     >
                       Edit profile
@@ -117,7 +117,7 @@ export default function Profile() {
                   </div>
                   <div>
                     <Link to="/userOrderList">
-                      <button className="btn my-global-button my-2">
+                      <button className="btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black my-2">
                         My Orders
                       </button>
                     </Link>
@@ -125,8 +125,8 @@ export default function Profile() {
                 </div>
                 <div className="mx-auto">
                   <button
-                    className="btn my-global-button mx-auto mb-4 "
-                    onClick={handleShowEditModal}
+                    className="btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black mx-auto mb-4 "
+                    onClick={handleEditProfile }
                   >
                     Reset Password
                   </button>
@@ -150,7 +150,8 @@ export default function Profile() {
                   {phone}
                 </p>
 
-                <Modal
+
+                {/* <Modal
                   style={{ backgroundColor: 'transparent' }}
                   show={showEditModal}
                   id="CardBackIMg1"
@@ -256,7 +257,7 @@ export default function Profile() {
                       </Button>
                     </Modal.Footer>
                   </div>
-                </Modal>
+                </Modal> */}
               </div>
             </Col>
           </Row>

@@ -1,8 +1,3 @@
-/* eslint-disable no-shadow */
-/* eslint-disable no-undef */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable react/jsx-no-bind */
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -58,11 +53,13 @@ const OrdersTable1 = () => {
 
   if (noCurrentOrders && noDeliveredOrders) {
     // Optionally, you can render a message or hide the component entirely
-    return <div>No orders available.</div>;
+    return (
+      <div className='bg-white'>
+        <div  className='vh-100 d-flex justify-content-center text-center text-black align-items-center'>No orders available.</div></div>);
   }
 
   return (
-    <div id="ProfileMainImg">
+    <div className='bg-white'>
       <div className="container col-lg-8" id="CardText">
         <div className="row">
           <div className="col p-4 my-2">
@@ -70,7 +67,7 @@ const OrdersTable1 = () => {
               <div>
                 <h3
                   style={{
-                    backgroundColor: 'transparent',
+                    backgroundColor: 'white',
                     fontWeight: '550'
                   }}
                 >
@@ -87,7 +84,7 @@ const OrdersTable1 = () => {
         </div>
 
         <div className="row">
-          <div className="col p-4 mb-2">
+          <div className="col p-4 mb-2">  
             {!noDeliveredOrders && (
               <>
                 <h3>Delivered Orders</h3>

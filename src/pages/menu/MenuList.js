@@ -81,14 +81,14 @@ const MenuList = () => {
   ];
 
   return (
-    <div className="MenuHeaderMain1">
+    <div className=" bg-white">
       <div className="container-fluid">
         <div className="row">
           <div className="col">
-            <h3 className="text-center mt-3">Menus</h3>
+            <h3 className="text-center text-black mt-3">Menus</h3>
             <div className="d-flex justify-content-end ">
               <Button
-                className=" my-global-button "
+                className=" btn my-3 px-4 btn border border-danger rounded bg-white text-black "
                 id="CardText"
                 onClick={handleAdd}
               >

@@ -1,8 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-shadow */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-underscore-dangle */
 
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
@@ -109,7 +104,7 @@ const CustomerList = () => {
   }, [currentPage, searchInput]);
 
   return (
-    <div className="MenuHeaderMain1" style={{ minHeight: '58vh' }}>
+    <div className="bg-white text-white" style={{ minHeight: '58vh' }}>
       <div className="container-fluid">
         <div className="row">
           <h5 className="mt-3" id="CardText" style={{ fontWeight: 'bold' }}>
@@ -145,7 +140,7 @@ const CustomerList = () => {
                 actions: (
                   <div>
                     <Button
-                      className="my-global-button"
+                      className="btn my-1 px-4 btn border border-danger rounded bg-white text-black"
                       onClick={() => handleDelete(user._id)}
                     >
                       <FontAwesomeIcon icon={faTrash} />

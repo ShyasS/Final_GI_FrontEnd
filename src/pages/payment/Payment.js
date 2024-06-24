@@ -1,7 +1,3 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-shadow */
-/* eslint-disable react/prop-types */
-
 import {
   useElements,
   useStripe,
@@ -11,8 +7,8 @@ import {
 } from '@stripe/react-stripe-js';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Form, Card } from 'react-bootstrap';
+import { useNavigate, Link } from 'react-router-dom';
 import './Payment.css';
 
 const Payment = () => {
@@ -31,9 +27,8 @@ const Payment = () => {
     amount: Math.round(confirmOrderData.orderSummary.total),
     shipping: {
       // name: `${user.name} ${user.lastName}`,
-      name: `${user?.name || shippingInfo.name} ${
-        user?.lastName || shippingInfo.lastName
-      }`,
+      name: `${user?.name || shippingInfo.name} ${user?.lastName || shippingInfo.lastName
+        }`,
       phone: user?.phone || emailOrMobile,
       address: {
         line1: billingAddress?.streetAddress,
@@ -45,7 +40,9 @@ const Payment = () => {
       }
     }
   };
-
+  const handlegoback = () => {
+    navigate(-1);
+  }
   const submitHandler = async (e) => {
     e.preventDefault();
     document.querySelector('#pay_btn').disabled = true;
@@ -58,9 +55,8 @@ const Payment = () => {
         payment_method: {
           card: cardNumberElement,
           billing_details: {
-            name: `${user?.name || shippingInfo.name} ${
-              user?.lastName || shippingInfo.lastName
-            }`,
+            name: `${user?.name || shippingInfo.name} ${user?.lastName || shippingInfo.lastName
+              }`,
             email: user?.email || emailOrMobile
           }
         }
@@ -93,66 +89,74 @@ const Payment = () => {
   }, [error]);
 
   return (
-    <div className="" id="CardPMainImg">
-      <div className="col-11 col-md-4 mx-auto py-5">
-        <Form
-          onSubmit={submitHandler}
-          className="shadow-lg custom-table"
-          id="CardBackIMg1"
+    <div className="bg-white" id="CardPMainImg">
+      <div className="col-11 col-md-4 mx-auto py-5 ">
+        <Card
+          className="shadow-lg custom-table CardBackIMg1098 "
         >
-          <div className="m-3 ">
-            <h4 className="mb-4" id="CardText">
-              Card Info
-            </h4>
-            <div className="form-group">
-              <label htmlFor="card_num_field" id="CardText">
-                Card Number
-              </label>
-              <CardNumberElement
-                type="text"
-                style={{ backgroundColor: '#d4ffe8', color: 'black' }}
-                id="card_num_field"
-                className="form-control "
-              />
-            </div>
+          <Form onSubmit={submitHandler} >
+            <div className="m-3 grid gap-3">
+              <h4 className="mb-4 " id="CardText">
+                Card Info
+              </h4>
+              <div className="form-group p-2 g-col-6">
+                <label htmlFor="card_num_field" id="CardText">
+                  Card Number
+                </label>
+                <CardNumberElement
+                  type="text"
+                  style={{ backgroundColor: '#d4ffe8', color: 'black' }}
+                  id="card_num_field"
+                  className="form-control "
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="card_exp_field" id="CardText">
-                Card Expiry
-              </label>
-              <CardExpiryElement
-                style={{ backgroundColor: '#d4ffe8', color: 'black' }}
-                type="text"
-                id="card_exp_field"
-                className="form-control"
-              />
-            </div>
+              <div className="form-group p-2 g-col-6 ">
+                <label htmlFor="card_exp_field" id="CardText">
+                  Card Expiry
+                </label>
+                <CardExpiryElement
+                  style={{ backgroundColor: '#d4ffe8', color: 'black' }}
+                  type="text"
+                  id="card_exp_field"
+                  className="form-control"
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="card_cvc_field">Card CVC</label>
-              <CardCvcElement
-                style={{ backgroundColor: '#d4ffe8', color: 'black' }}
-                type="password"
-                id="card_cvc_field"
-                className="form-control "
-                value=""
-              />
+              <div className="form-group p-2 g-col-6" >
+                <label htmlFor="card_cvc_field">Card CVC</label>
+                <CardCvcElement
+                  style={{ backgroundColor: '#d4ffe8', color: 'black' }}
+                  type="password"
+                  id="card_cvc_field"
+                  className="form-control"
+                  value=""
+                />
+              </div>
+              <div className="d-flex justify-content-center">
+                <button
+                  id="pay_btn"
+                  type="submit"
+                  className="btn back btn-block my-3 text-black "
+                >
+                  Pay -{' '}
+                  {` $${confirmOrderData.orderSummary &&
+                    confirmOrderData.orderSummary.total
+                    }`}
+                </button>
+              </div>
+              <div className=" col-12 d-flex justify-content-center">
+                <button
+                  id="checkout_btn"
+                  className="btn back mb-4 ms-3 "
+                  onClick={handlegoback}
+                >
+                  Back to Page
+                </button>
+              </div>
             </div>
-            <div className="d-flex justify-content-center">
-              <button
-                id="pay_btn"
-                type="submit"
-                className="btn my-global-button btn-block my-3 text-white "
-              >
-                Pay -{' '}
-                {` $${
-                  confirmOrderData.orderSummary &&
-                  confirmOrderData.orderSummary.total
-                }`}
-              </button>
-            </div>
-          </div>
-        </Form>
+          </Form>
+        </Card>
       </div>
     </div>
   );

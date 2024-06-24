@@ -9,14 +9,24 @@ margin: 2px;
   text-align: left;
   display: block;
 }
-#AddtoCart{
+/* #AddtoCart{
   background-color: #809aef !important;
   color: #fff !important;
-}
+} */
 #CardText{
- color: white;
- text-shadow: 1px 1.7px #5a3a07;
+ color: rgb(4, 4, 4);
+ /* text-shadow: 1px 1.7px #5a3a07; */
 }
+.MenuCard{
+  filter:drop-shadow(0.3px 0.1px 0.1px red) !important;
+}
+#CardBackIMg1112{
+  background: rgb(255, 255, 255);
+  filter:drop-shadow(1px 0.5px 1px rgb(250, 30, 30));
+  color: rgb(0, 0, 0) !important;
+} 
+
+
 /*
 =============== 
 Menu
@@ -342,7 +352,7 @@ border: 2rem solid #fff;
 }
 
 #RowFourthComp{
-  /* margin-left:40px; */
   gap:30px;
 }
+
 

@@ -1,9 +1,4 @@
-/* eslint-disable no-alert */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 import React, { Fragment, useState, useEffect } from 'react';
 import { Button, Card, Modal } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -118,6 +113,9 @@ const Cart = () => {
       alert('Error deleting item');
     }
   };
+  const handlegoback = () =>{
+    navigate(-1);
+  }
   const checkoutHandler = () => {
     const cartItemsTotal = cartItems.reduce((acc, item) => {
       const quantity = item.quantity || 1; // Use item.quantity directly
@@ -143,23 +141,20 @@ const Cart = () => {
   if (!cartItems || cartItems.length === 0) {
     return (
       <div
-        className="row justify-content-center"
-        id="CardDetail"
-        style={{ height: '60vh' }}
+        className="d-flex justify-content-center"
       >
-        <div id="" className="col-12 mt-5 mx-auto text-center align-center">
-          <h3 className="mx-auto fs-1 pt-5 text-black">Your cart is empty</h3>
+        <div className=" vh-100 bg-white col-12 p-5  mx-auto text-center align-center">
+          <h2 className="mx-auto  pt-5 text-black">Your cart is empty</h2>
         </div>
       </div>
     );
   }
 
   return (
-    <div id="CartMain">
+    <div className='bg-white'>
       <div className="col-11 mx-auto py-5 ">
         <div
-          id="CardDetail"
-          className="container mx-auto custom-table col-12 col-lg-5 pt-5"
+          className="container-fluid CardDetail112 mx-auto  col-12 col-lg-5 pt-5"
         >
           <Card id="CardText" className="px-4 py-2 mb-3 col-12 mx-auto">
             <Card.Body>
@@ -181,7 +176,7 @@ const Cart = () => {
             </Card.Body>
           </Card>
           {/* <Card id="CardText" className="px-4 py-2 mb-3 col-12 ms-3 mx-auto"> */}
-          <h5>
+          <h5 id="CardText">
             Cart Order Items
             <br />
             <hr />
@@ -281,11 +276,18 @@ const Cart = () => {
           </Card>
           <div className=" mb-3 col-12 d-flex justify-content-center">
             <button
-              id="checkout_btn"
+              id=""
               onClick={checkoutHandler}
-              className="btn my-global-button my-4 "
+              className="btn back  my-4 "
             >
               Check out
+            </button>
+            <button
+              id=""
+              onClick={handlegoback}
+              className="btn back  my-4 ms-3 "
+            >
+              Back to Order
             </button>
           </div>
 

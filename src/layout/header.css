@@ -26,6 +26,15 @@ div {
     "CRSV" 0.5,
     "MONO" 0 !important;
 }
+.back111{
+  border-radius: 10px !important;
+  border-color: red !important;
+}
+.back1:hover{
+  background-color:  #f6d6ff !important;
+  border-color: red !important;
+    border-radius: 10px;
+}
 
 .p2 {
   font-size: 23px !important;
@@ -90,23 +99,9 @@ position: relative;
 }
 
 
-.my-global-button1:hover {
-  background-color: #9a9eaa !important;
-}
 
-.my-global-button1 {
-  background-color: #dee7ff !important;
-  color: #000000 !important;
-  padding: 10px 20px;
-  border: none !important;
-  border-radius: 30px !important;
-  cursor: pointer;
-  width: auto !important;
-  padding-right: 20px !important;
-  padding-left: 20px !important;
-  text-align: center !important;
-  font-size: 1.1rem !important; 
-}
+
+
 
 
 @media screen and (min-width:250px) and (max-width:989px){

@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import React from 'react';
 import HomeFirstComp from './HomeFirstComp';
 import HomeSecondComp from './HomeSecondComp';

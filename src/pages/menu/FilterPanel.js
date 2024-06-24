@@ -1,15 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-undef */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import Loader from 'layout/Loader';
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Pagination from 'react-js-pagination';
+import './FilterPanel.css';
 
 const FilterPanel = ({
   dietaryCategories,
@@ -23,17 +17,16 @@ const FilterPanel = ({
   loading
 }) => {
   return (
-    <div>
-      <div className="col-12">
+    <div className='container-fluid' >
+      <div className="row">
         <h4 id="products_heading">Category</h4>
         {/* <Button onClick={handleClearFilter}>clear</Button> */}
         {/* <hr /> */}
         {loading ? (
           <Loader />
         ) : (
-          <>
+          <div>
             <div
-              className="row"
               style={{
                 background: '#red',
                 borderRadius: '8px'
@@ -45,7 +38,7 @@ const FilterPanel = ({
                     Food Preferences
                   </h5>
                 </>
-                <div className="ms-md-n4">
+                <div className="row ms-md-n4">
                   <ul className="grid gap-3">
                     {dietaryCategories.map((category) => (
                       <li
@@ -79,13 +72,13 @@ const FilterPanel = ({
                 </div>
               </div>
               {/* <hr /> */}
-              <div className="mt-5">
+              <div className=" mt-5">
                 <>
                   <h5 className="mb-3" style={{ color: 'black' }}>
                     Course
                   </h5>
                 </>
-                <div className="ms-md-n4">
+                <div className=" row ms-md-n4">
                   <ul className="grid gap-3">
                     {mealCategories.map((category) => (
                       <li
@@ -112,24 +105,8 @@ const FilterPanel = ({
                   </ul>
                 </div>
               </div>
-              {/* <hr className="my-5" /> */}
             </div>
-            {/* {productsCount > 0 && productsCount > resPerPage ? (
-          <div className="d-flex justify-content-center mt-5">
-            <Pagination
-              activePage={currentPage}
-              onChange={handlePageChange}
-              totalItemsCount={productsCount}
-              itemsCountPerPage={resPerPage}
-              nextPageText="Next"
-              firstPageText="First"
-              lastPageText="Last"
-              itemClass="page-item"
-              linkClass="page-link"
-            />
           </div>
-        ) : null} */}
-          </>
         )}
       </div>
     </div>

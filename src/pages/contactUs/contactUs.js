@@ -38,12 +38,12 @@ const ContactUs = () => {
   };
 
   return (
-    <div id="CardText">
+    <div >
       {/* Button to open modal */}
       <button
         type="button"
         data-bs-toggle="modal"
-        className="my-global-button"
+        className="btn my-3 px-4 btn border border-danger rounded bg-white text-black"
         data-bs-target="#contactModal"
       >
         Contact Us
@@ -51,7 +51,7 @@ const ContactUs = () => {
 
       {/* Modal */}
       <div
-        className="modal fade"
+        className="modal fade bg-transparent"
         id="contactModal"
         style={{ backgroundColor: 'transparent' }}
         tabIndex="-1"
@@ -59,7 +59,7 @@ const ContactUs = () => {
         aria-hidden="true"
       >
         <div className="modal-dialog" id="CardText1">
-          <div className="modal-content" id="CardBackIMg1">
+          <div className="modal-content bg-white CardImg114">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
                 Contact Us
@@ -85,7 +85,7 @@ const ContactUs = () => {
                   <input
                     type="text"
                     style={{ backgroundColor: 'white', color: 'black' }}
-                    className="form-control"
+                    className="form-control border border-black"
                     id="fullName"
                     name="fullName"
                     onChange={handleChange}
@@ -99,7 +99,7 @@ const ContactUs = () => {
                   <input
                     type="email"
                     style={{ backgroundColor: 'white', color: 'black' }}
-                    className="form-control"
+                    className="form-control border border-black"
                     id="email"
                     name="email"
                     onChange={handleChange}
@@ -113,7 +113,7 @@ const ContactUs = () => {
                   <input
                     type="text"
                     style={{ backgroundColor: 'white', color: 'black' }}
-                    className="form-control"
+                    className="form-control border border-black"
                     id="subject"
                     name="subject"
                     onChange={handleChange}
@@ -126,7 +126,7 @@ const ContactUs = () => {
                   </label>
                   <textarea
                     style={{ backgroundColor: 'white', color: 'black' }}
-                    className="form-control"
+                    className="form-control border border-black"
                     id="message"
                     name="message"
                     rows="4"
@@ -137,7 +137,7 @@ const ContactUs = () => {
                 <button
                   type="submit"
                   id="contact"
-                  className="btn my-global-button w-25 text-black"
+                  className="btn my-3 px-4 btn border border-danger rounded bg-white w-100 text-black"
                 >
                   Send
                 </button>

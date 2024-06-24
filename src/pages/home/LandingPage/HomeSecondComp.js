@@ -1,4 +1,4 @@
-/* eslint-disable global-require */
+
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import './index.css';
 
-// import required modules
 
 const HomeSecondComp = () => {
   return (
@@ -20,7 +19,7 @@ const HomeSecondComp = () => {
           <Col className="col-12 col-lg-5">
             <Image
               style={{
-                height: '80vh',
+                height: '35rem',
                 width: 'auto',
                 borderRadius: '30px'
               }}

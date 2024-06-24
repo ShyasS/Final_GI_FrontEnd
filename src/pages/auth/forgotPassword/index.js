@@ -6,6 +6,7 @@ import SimpleReactValidator from 'simple-react-validator';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../login/login.scss';
+import { Card } from 'react-bootstrap';
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');
@@ -55,64 +56,74 @@ const ForgotPasswordPage = () => {
   };
 
   useEffect(() => {
-    return () => {};
+    return () => { };
   }, []);
 
   return (
-    <div id="ForgetPMainImg">
-      <div className="signup-form-container mx-auto container-fluid col-md-4 py-5 mx-3 ">
-        <form onSubmit={handleSubmit}>
-          <div className="row custom-table my-5" id="CardBackIMg1">
-            <div className="col-md-12">
-              <h2 className="text-center mt-3 font-regular-29" id="CardText">
-                Forgot password
-              </h2>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label" id="CardText">
-                  Email address{' '}
-                  <span className="text-danger">
-                    {' '}
-                    <b>*</b>
-                  </span>
-                </label>
-                <input
-                  id="CardText"
-                  value={email}
-                  style={{ backgroundColor: 'white', color: 'black' }}
-                  name="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  type="email"
-                  required
-                  placeholder="Field is required"
-                  className="form-control"
-                />
-                {validator.current.message('Email', email, 'required')}
+    <div className="container-fluid bg-white">
+      <div className='row '>
+        <div className='col-lg-5 col-xs-12 col-md-9 mx-auto my-5'>
+        <Card className='Cardimg123'>
+          <form onSubmit={handleSubmit}>
+            <div className=" my-5 bg-white p-4">
+              <div className="">
+                <h2 className="text-center mt-1 font-regular-29" id="CardText">
+                  Forgot password
+                </h2>
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label text-black ">
+                    Email address{' '}
+                    <span className="text-danger">
+                      {' '}
+                      <b>*</b>
+                    </span>
+                  </label>
+                  <input
+                    id="CardText"
+                    value={email}
+                    style={{ backgroundColor: 'white', color: 'black' }}
+                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="email"
+                    required
+                    placeholder="Field is required"
+                    className="form-control"
+                  />
+                  {validator.current.message('Email', email, 'required')}
+                </div>
+              </div>
+              <div className="d-flex justify-content-center">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="btn my-3 px-4 btn border border-danger rounded bg-white w-100"
+                  style={{ borderRadius: '30px' }}
+                >
+                  Submit
+                </button>
+              </div>
+              <div className='row'>
+              <div className='col-6'>
+                <Link to="/login" id="CardText">
+                <button  className="btn my-3 px-md-4 btn border border-danger rounded bg-white">
+                  Back to login
+                  </button>
+                </Link>
+              </div>
+              <div className=" col-6">
+                <Link to="/" id="CardText">
+                <button  className="btn my-3 px-4 btn border border-danger rounded bg-white">
+                Continue as Guest
+                  </button>
+                </Link>
+              </div>
               </div>
             </div>
-            <div className="d-flex justify-content-center">
-              <button
-                type="submit"
-                disabled={loading}
-                className="btn mb-4 w-25"
-                style={{ borderRadius: '30px' }}
-              >
-                Submit
-              </button>
-            </div>
-            <div>
-              <Link to="/login" id="CardText">
-                Back to login
-              </Link>
-            </div>
-            <div className="mb-3">
-              <Link to="/" id="CardText">
-                Continue as Guest
-              </Link>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+          </form>
+          </Card>
+        </div>
+        </div>
+        </div>
   );
 };
 
