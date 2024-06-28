@@ -269,10 +269,6 @@ const LoginPage = () => {
         navigate('/');
       }
     }
-
-    return () => {
-      dispatch(clearAuthError());
-    };
   }, [error, isAuthenticated, dispatch, navigate, loginSuccess]);
 
   return (
