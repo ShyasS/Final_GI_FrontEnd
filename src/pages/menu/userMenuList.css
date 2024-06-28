@@ -352,7 +352,7 @@ border: 2rem solid #fff;
 }
 
 #RowFourthComp{
-  gap:30px;
+  gap:30px !important;
 }
 
 

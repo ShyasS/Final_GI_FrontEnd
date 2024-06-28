@@ -346,7 +346,7 @@ const ConfirmOrder = () => {
   const time = JSON.parse(localStorage.getItem('selectedTimeSlot'));
   const distanceResponse = JSON.parse(localStorage.getItem('distanceResponse'));
   const isLoggedIn = JSON.parse(localStorage.getItem('isloggedIn'));
-
+//Calculating Shipping price :-
   const shippingPrice = isPickup ? 0 : 10 * Number(taxPrice.deliveryChargePerKm * 0.5);
   console.log(shippingPrice)
 

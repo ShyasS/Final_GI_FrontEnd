@@ -276,7 +276,7 @@ const LoginPage = () => {
         <form onSubmit={handleLogin}>
           <div className="row mx-auto mt-5">
             <div className="col-md-12 ">
-              <h1 className="text-center mt-3 text-black">
+              <h1 className="text-center mt-3 fs-1 text-black">
                 Log in
               </h1>
            
@@ -359,7 +359,7 @@ const LoginPage = () => {
                     }}
                   >
                    <button className=' btn border border-danger rounded bg-white text-black'>
-                    Continue as Guest
+                    Go to HomePage
                     </button>
                   </Link>
                 </p>
