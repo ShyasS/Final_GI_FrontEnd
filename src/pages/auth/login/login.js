@@ -206,7 +206,7 @@
 
 
 
-
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState, useRef } from 'react';
@@ -244,6 +244,8 @@ const LoginPage = () => {
     }
   };
 
+
+
   useEffect(() => {
     if (loginSuccess) {
       const { token, user } = loginSuccess.payload;
@@ -267,6 +269,10 @@ const LoginPage = () => {
         navigate('/');
       }
     }
+
+    return () => {
+      dispatch(clearAuthError());
+    };
   }, [error, isAuthenticated, dispatch, navigate, loginSuccess]);
 
   return (
