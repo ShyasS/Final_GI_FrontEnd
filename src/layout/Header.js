@@ -3,23 +3,19 @@ import { React, useState, useEffect, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useDispatch, useSelector } from 'react-redux';
 import { NavDropdown, Stack } from 'react-bootstrap';
 import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { logout } from '../redux-toolkit/actions/auth';
 import './header.css';
+import axios from 'axios'
 
 const Header = () => {
   const pathname1 = window.location.pathname;
-  const { isAuthenticated } = useSelector((state) => state.authState);
   const [navbarExpanded, setNavbarExpanded] = useState(false);
   const cartItemsFromStorage =
     JSON.parse(localStorage.getItem('cartItems')) || [];
   const [cartItems, setCartItems] = useState(cartItemsFromStorage);
-
-  const dispatch = useDispatch();
   const { token } = useParams();
   const navigate = useNavigate();
   const isloggedIn = localStorage.getItem('isloggedIn' || false);
@@ -30,19 +26,19 @@ const Header = () => {
     setNavbarExpanded(!navbarExpanded);
   };
 
-  const handleLogout = () => {
-    dispatch(logout);
-    document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
-    document.cookie = 'user=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    localStorage.removeItem('user');
-    localStorage.clear();
-    localStorage.clear();
-    window.localStorage.setItem('isloggedIn', false);
-    window.localStorage.setItem('isloggedIn', false);
-    setIsLoggedIn(false);
-    navigate('/login');
+  const handleLogout = async () => {
+    try {
+      await axios.post('/api/logout');
+      document.cookie =
+        'token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+      document.cookie = 'user=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+      localStorage.clear();
+      sessionStorage.clear();
+      setIsLoggedIn(false);
+      navigate('/login');
+    } catch (error) {
+      console.error('Failed to logout:', error);
+    }
   };
 
   const getUserRole = () => {
@@ -58,6 +54,7 @@ const Header = () => {
   useEffect(() => {
     setNavbarExpanded(false);
   }, [navigate, token]);
+
   return (
     <Navbar
       expand="lg"

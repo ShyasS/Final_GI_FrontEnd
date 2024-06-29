@@ -205,71 +205,71 @@
 // export default LoginPage;
 
 
-
+import axios from 'axios';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState, useRef } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
-import { clearAuthError, login } from '../../../redux-toolkit/actions/auth';
 import './login.scss';
 import CryptoJS from 'crypto-js'; // Importing CryptoJS library
 import { Card } from 'react-bootstrap';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { loading, error, loginSuccess } = useSelector(
-    (state) => state.authState
-  );
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const validator = useRef(
     new SimpleReactValidator({ className: 'text-danger' })
   );
   const isAuthenticated = localStorage.getItem('isloggedIn') === 'true';
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     if (validator.current.allValid()) {
       const encryptedPassword = CryptoJS.AES.encrypt(
         password,
         'ghjdjdgdhddjjdhgdcdghww#hsh536'
       ).toString(); // Encrypting the password
-      dispatch(login(email, encryptedPassword));
+
+      setLoading(true);
+      try {
+        const response = await axios.post('/api/login', {
+          email,
+          password: encryptedPassword
+        });
+        console.log(response)
+
+        const { token, user } = response.data;
+        document.cookie = `token=${token}; path=/;`;
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('isloggedIn', true);
+        sessionStorage.setItem('isloggedIn', true);
+        navigate(user.role !== 'user' ? '/admin/dashboard' : '/');
+      } catch (err) {
+        setError(err.response?.data?.message || 'Login failed');
+      } finally {
+        setLoading(false);
+      }
     } else {
       validator.current.showMessages();
       setEmail('');
       setPassword('');
     }
   };
-
-
-
+  
   useEffect(() => {
-    if (loginSuccess) {
-      const { token, user } = loginSuccess.payload;
-      document.cookie = `token=${token}; path=/;`;
-      localStorage.setItem('token', token);
-      localStorage.setItem('user', JSON.stringify(user));
-      localStorage.setItem('user', JSON.stringify(user));
-    }
     if (error) {
-      alert(error, {
-        onClose: () => {
-          dispatch(clearAuthError);
-        }
-      });
+      alert(error);
+      setError(null);
     }
     if (isAuthenticated) {
       const user = JSON.parse(localStorage.getItem('user'));
-      if (user && user.role !== 'user') {
-        navigate('/admin/dashboard');
-      } else {
-        navigate('/');
-      }
+      navigate(user && user.role !== 'user' ? '/admin/dashboard' : '/');
     }
-  }, [error, isAuthenticated, dispatch, navigate, loginSuccess]);
+  }, [error, isAuthenticated, navigate]);
 
   return (
     <div className="container-fluid bg-white">
@@ -281,7 +281,6 @@ const LoginPage = () => {
               <h1 className="text-center mt-3 fs-1 text-black">
                 Log in
               </h1>
-           
               <div className="mb-3 address-container">
                 <p
                   htmlFor="email"

@@ -1,44 +1,50 @@
 /* eslint-disable no-alert */
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState, useRef } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
-import { sendLoginOtp } from '../../../redux-toolkit/actions/auth';
 import './login.scss';
 import { Card } from 'react-bootstrap';
 
 const SendLoginOtp = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
-  const { loading, error, isAuthenticated } = useSelector(
-    (state) => state.authState
-  );
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const isAuthenticated = localStorage.getItem('isloggedIn') === 'true';
   const validator = useRef(
     new SimpleReactValidator({ className: 'text-danger' })
   );
+
   useEffect(() => {
     if (isAuthenticated) {
       navigate('/');
     }
     if (error) {
       alert('Failed!');
+      setError(null);
     }
-  }, [error, isAuthenticated, dispatch, navigate]);
+  }, [error, isAuthenticated, navigate]);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     if (validator.current.allValid()) {
-      localStorage.setItem('emailOrPhone', JSON.stringify(email));
-      alert(`OTP sent!`);
-      navigate('/loginWithOtp');
-      dispatch(sendLoginOtp(email));
+      setLoading(true);
+      try {
+        await axios.post('/api/login/otp', { email });
+        localStorage.setItem('emailOrPhone', JSON.stringify(email));
+        alert('OTP sent!');
+        navigate('/loginWithOtp');
+      } catch (err) {
+        setError(err.response?.data?.message || 'Failed to send OTP');
+      } finally {
+        setLoading(false);
+      }
     } else {
       validator.current.showMessages();
       setEmail('');
-      dispatch(sendLoginOtp(setEmail));
     }
   };
+
   return (
     <div className="bg-white py-4">
       <div className="container-fluid mx-auto col-md-5 mt-5 mb-4 signup-form-container ">
